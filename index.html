@@ -1,64 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abu Sadid - Portfolio</title>
+    <title>Sabbir Hosen Joy - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-    <!-- Landing/Intro Section -->
+    <!-- SECTION 1: Hero / Landing (UNTOUCHED) -->
     <section id="intro" class="hero-section">
-        <!-- Dotted background overlay -->
-        <div class="grid-overlay"></div>
-        
         <div class="hero-content">
             <div class="hero-text">
-                <h3 class="greeting">Hello, I'm Abu Sadid</h3>
+                <h3 class="greeting">Hello, I'm Sabbir Hosen Joy</h3>
                 <h1 class="main-heading">
                     Undergraduate<br>
                     Student<br>
                     Based In Bangladesh.
                 </h1>
                 <div class="scroll-more">
-                    <a href="#about">SCROLL FOR MORE</a>
+                    <a href="#video-intro">SCROLL FOR MORE</a>
                     <span class="line"></span>
                 </div>
             </div>
-            
-            <div class="hero-image">
-                <img src="photo.png" alt="Abu Sadid">
+        </div>
+    </section>
+
+    <!-- SECTION 2: Video Resume (UNTOUCHED) -->
+    <section id="video-intro" class="content-section bg-black">
+        <div class="container text-center">
+            <h2 class="section-subtitle">Watch My Introduction</h2>
+            <p class="section-desc">A short video about who I am and what I am working towards.</p>
+
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <i class="fa-solid fa-play-circle play-icon"></i>
+                    <p>Resume Video Placeholder</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="content-section">
-        <div class="container text-center">
-            <h2>About Me</h2>
-            <p>I am an Undergraduate Student studying Computer Science and Engineering. I am passionate about technology, coding, and building modern web applications.</p>
-        </div>
-    </section>
+    <!-- SECTION 3: Who I Am / About Section (UNTOUCHED) -->
+    <section id="about" class="content-section bg-greenish">
+        <div class="container">
+            <h2 class="section-title">Who I Am</h2>
 
-    <!-- Works Section -->
-    <section id="works" class="content-section">
-        <div class="container text-center">
-            <h2>Selected Works</h2>
-            <div class="grid">
-                <div class="card">Project 1</div>
-                <div class="card">Project 2</div>
-                <div class="card">Project 3</div>
+            <div class="about-grid">
+                <!-- Left Side Text Content -->
+                <div class="about-text">
+                    <p>
+                        Hi, I’m <strong>Sabbir Hosen Joy</strong>, a Computer Science and Engineering undergraduate at
+                        <strong>Daffodil International University</strong>, driven by curiosity, problem-solving, and a
+                        passion for building things with technology.
+                    </p>
+                    <p>
+                        My journey in CSE is focused on strengthening my foundation in programming, <strong
+                            class="highlight-text">Data Structures & Algorithms</strong>, <strong
+                            class="highlight-text">Competitive Programming</strong>, and core Computer Science concepts.
+                        Alongside this, I’m exploring Java, Python, Web Development, Artificial Intelligence, and
+                        Machine Learning to understand how ideas can be transformed into practical solutions.
+                    </p>
+                    <p>
+                        I enjoy learning by experimenting, solving problems, and working on projects that challenge me
+                        to think differently. Rather than limiting myself to one field, I’m continuously exploring
+                        different areas of technology and discovering where I can create the most meaningful impact.
+                    </p>
+                </div>
+
+                <!-- Right Side Distinctly Designed Cards -->
+                <div class="about-cards">
+
+                    <!-- Card 1: Academic Snapshot -->
+                    <div class="academic-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div>
+                                <h3>Daffodil International University</h3>
+                                <span class="sub-title">B.Sc. in Computer Science & Engineering</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="academic-item">
+                                <span class="label">Department:</span>
+                                <span class="value">Department of CSE</span>
+                            </div>
+                            <div class="academic-item">
+                                <span class="label">Current Status:</span>
+                                <span class="value highlight-badge">2nd Year, 2nd Semester</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Career Goal Spotlight -->
+                    <div class="career-spotlight">
+                        <div class="spotlight-header">
+                            <span class="goal-tag"><i class="fa-solid fa-bullseye"></i> CAREER GOAL</span>
+                        </div>
+                        <p class="spotlight-text">
+                            "Keep learning, keep building, and gradually grow into a skilled <strong>software
+                                professional</strong> with strong problem-solving and development skills."
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <h2>2nd</h2>
+                    <p>Years of Learning</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h2>2</h2>
+                    <p>Awards</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <h2>3</h2>
+                    <p>Projects & Experiments</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h2>4+</h2>
+                    <p>Technologies Exploring</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fa-solid fa-square-check"></i></div>
+                    <h2>400+</h2>
+                    <p>Problems Solved</p>
+                </div>
+                <div class="stat-box highlight-stat">
+                    <div class="stat-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h2>&infin;</h2>
+                    <p>Ideas to Explore</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Abu Sadid. All rights reserved.</p>
+    <!-- SECTION 4: WHAT I WORK WITH (INTERACTIVE ECOSYSTEM REDESIGN) -->
+    <section id="tech-stack" class="content-section bg-black ecosystem-section">
+        <div class="tech-grid-overlay"></div>
+        <div class="container text-center relative-z">
+            <span class="eyebrow-text">TECH STACK</span>
+            <h2 class="section-title main-glow-title">WHAT I WORK WITH</h2>
+            <p class="section-desc max-w-desc">Tools, concepts and technologies I’m using to turn ideas into working
+                solutions.</p>
+
+            <!-- Interactive Orbital Developer Ecosystem Container -->
+            <div class="ecosystem-container" id="ecosystem">
+                <!-- Glowing Interactive Center Core -->
+                <div class="center-core">
+                    <div class="core-pulse-ring"></div>
+                    <div class="core-pulse-ring delay-1"></div>
+                    <span class="core-name">SABBIR</span>
+                </div>
+
+                <!-- Floating Orbiting Tech Nodes -->
+                <!-- Node 1: C++ -->
+                <div class="tech-node node-1" data-tech="cpp">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-code node-icon"></i>
+                        <span class="node-label">C++</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>C++</h4>
+                        <p>Building strong foundations in problem solving, algorithms and competitive programming.</p>
+                    </div>
+                </div>
+
+                <!-- Node 2: Java -->
+                <div class="tech-node node-2" data-tech="java">
+                    <div class="node-inner">
+                        <i class="fa-brands fa-java node-icon"></i>
+                        <span class="node-label">Java</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Java</h4>
+                        <p>Exploring object-oriented programming and application development.</p>
+                    </div>
+                </div>
+
+                <!-- Node 3: Python -->
+                <div class="tech-node node-3" data-tech="python">
+                    <div class="node-inner">
+                        <i class="fa-brands fa-python node-icon"></i>
+                        <span class="node-label">Python</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Python</h4>
+                        <p>Learning Python for development, automation and future AI/ML work.</p>
+                    </div>
+                </div>
+
+                <!-- Node 4: DSA -->
+                <div class="tech-node node-4" data-tech="dsa">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-diagram-project node-icon"></i>
+                        <span class="node-label">DSA</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Data Structures & Algorithms</h4>
+                        <p>Strengthening data structures, algorithms and computational thinking.</p>
+                    </div>
+                </div>
+
+                <!-- Node 5: Competitive Programming -->
+                <div class="tech-node node-5" data-tech="cp">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-trophy node-icon"></i>
+                        <span class="node-label">Competitive Prog.</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Competitive Programming</h4>
+                        <p>Practicing algorithmic problem solving through programming contests.</p>
+                    </div>
+                </div>
+
+                <!-- Node 6: Web Development -->
+                <div class="tech-node node-6" data-tech="webdev">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-globe node-icon"></i>
+                        <span class="node-label">Web Dev</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Web Development</h4>
+                        <p>Learning to turn ideas into responsive and interactive web experiences.</p>
+                    </div>
+                </div>
+
+                <!-- Node 7: Artificial Intelligence -->
+                <div class="tech-node node-7" data-tech="ai">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-brain node-icon"></i>
+                        <span class="node-label">Artificial Intelligence</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Artificial Intelligence</h4>
+                        <p>Exploring intelligent systems and the foundations behind modern AI.</p>
+                    </div>
+                </div>
+
+                <!-- Node 8: Machine Learning -->
+                <div class="tech-node node-8" data-tech="ml">
+                    <div class="node-inner">
+                        <i class="fa-solid fa-robot node-icon"></i>
+                        <span class="node-label">Machine Learning</span>
+                    </div>
+                    <div class="node-card">
+                        <h4>Machine Learning</h4>
+                        <p>Building the mathematical and programming foundation for ML.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="bottom-tagline">Always learning. Always building.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: THINGS I'VE BUILT (EDITORIAL HORIZONTAL SHOWCASE REDESIGN) -->
+    <section id="works" class="content-section bg-greenish showcase-section">
+        <div class="container">
+            <div class="showcase-header">
+                <span class="eyebrow-text">FEATURED WORK</span>
+                <h2 class="section-title">THINGS I'VE BUILT</h2>
+                <p class="section-desc">From algorithms to real-world ideas.</p>
+            </div>
+
+            <div class="editorial-showcase">
+
+                <!-- Project 01 Layout: Text LEFT -> Visual RIGHT -->
+                <div class="showcase-item project-layout-normal">
+                    <div class="project-details">
+                        <span class="project-num">01</span>
+                        <h3 class="project-title">Campus Cable Planner</h3>
+                        <p class="project-description">
+                            A graph-based network planning system designed to model campus connectivity, calculate
+                            routes and optimize network planning.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>C++</span>
+                            <span>Graph Algorithms</span>
+                            <span>Dijkstra</span>
+                            <span>MST</span>
+                            <span>Network Optimization</span>
+                        </div>
+                        <div class="project-action">
+                            <a href="#" class="view-project-btn">
+                                <span>VIEW PROJECT</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-visual">
+                        <div class="visual-wrapper network-bg">
+                            <div class="visual-overlay-grid"></div>
+                            <!-- Abstract Network UI Visualization -->
+                            <div class="network-node-canvas">
+                                <div class="net-node n1"><span>Router A</span></div>
+                                <div class="net-node n2"><span>Core Switch</span></div>
+                                <div class="net-node n3"><span>Hub B</span></div>
+                                <div class="net-node n4"><span>Host C</span></div>
+
+                                <svg class="network-svg-lines" viewBox="0 0 400 300">
+                                    <path d="M 80 80 L 200 150 M 200 150 L 320 70 M 200 150 L 280 230 M 80 80 L 280 230"
+                                        stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5" fill="none"
+                                        stroke-dasharray="4" />
+                                    <path d="M 80 80 L 200 150 M 200 150 L 320 70" stroke="#10b981" stroke-width="2"
+                                        fill="none" class="animated-path" />
+                                </svg>
+                                <div class="data-badge">
+                                    <i class="fa-solid fa-bolt"></i> Optimal Path: 12ms
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider Line -->
+                <div class="showcase-divider"></div>
+
+                <!-- Project 02 Layout: Visual LEFT -> Text RIGHT -->
+                <div class="showcase-item project-layout-reverse">
+                    <div class="project-visual">
+                        <div class="visual-wrapper data-bg">
+                            <div class="visual-overlay-grid"></div>
+                            <!-- Abstract Data Management Interface Visualization -->
+                            <div class="data-ui-canvas">
+                                <div class="ui-panel-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="panel-title">land_records_db.struct</span>
+                                </div>
+                                <div class="data-block-list">
+                                    <div class="data-row row-active">
+                                        <span class="row-id">#REC-8041</span>
+                                        <span class="row-tag">Linked Node [Head]</span>
+                                        <span class="row-status">Verified</span>
+                                    </div>
+                                    <div class="data-row">
+                                        <span class="row-id">#REC-8042</span>
+                                        <span class="row-tag">Queue Segment</span>
+                                        <span class="row-status">Pending</span>
+                                    </div>
+                                    <div class="data-row">
+                                        <span class="row-id">#REC-8043</span>
+                                        <span class="row-tag">Stack Frame</span>
+                                        <span class="row-status">Allocated</span>
+                                    </div>
+                                </div>
+                                <div class="structure-badge">
+                                    <i class="fa-solid fa-database"></i> O(1) Memory Indexing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-details">
+                        <span class="project-num">02</span>
+                        <h3 class="project-title">Land Management System</h3>
+                        <p class="project-description">
+                            A data-structure based system focused on organizing and managing land-related records
+                            efficiently.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>C++</span>
+                            <span>Data Structures</span>
+                            <span>Linked List</span>
+                            <span>Stack</span>
+                            <span>Queue</span>
+                        </div>
+                        <div class="project-action">
+                            <a href="#" class="view-project-btn">
+                                <span>VIEW PROJECT</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (UNTOUCHED) -->
+    <footer class="bg-greenish-dark">
+        <p>&copy; 2026 Sabbir Hosen Joy. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
