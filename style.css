@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #050505; /* Deep dark background */
+    background-color: #050505;
     color: #fff;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -19,39 +19,70 @@ a {
     transition: color 0.3s ease;
 }
 
-/* --- Landing/Hero Section --- */
+/* Background Sequence Classes */
+.bg-black {
+    background-color: #050505;
+}
+
+.bg-greenish {
+    background-color: #0a1714;
+}
+
+.bg-greenish-dark {
+    background-color: #060e0c;
+}
+
+/* Section Common Styling */
+.content-section {
+    padding: 100px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-pink {
+    color: #cf1767 !important;
+}
+
+.eyebrow-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #10b981;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- SECTION 1: HERO (UNTOUCHED) --- */
 .hero-section {
     height: 100vh;
     min-height: 600px;
     display: flex;
     align-items: center;
     position: relative;
-    background-color: #050505;
-}
-
-.grid-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20%;
-    width: 300px;
-    background-image: radial-gradient(#333 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.3;
-    z-index: 1;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
     display: flex;
     width: 100%;
-    height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
 }
 
 .hero-text {
@@ -60,8 +91,7 @@ a {
 }
 
 .greeting {
-    color: #cf1767; /* Pinkish color from screenshot */
-    font-family: 'Roboto', sans-serif;
+    color: #cf1767;
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 20px;
@@ -70,11 +100,12 @@ a {
 
 .main-heading {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 5rem;
+    font-size: 4.8rem;
     font-weight: 500;
     line-height: 1.15;
     color: #ffffff;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .scroll-more {
@@ -83,11 +114,7 @@ a {
     font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.scroll-more a {
-    margin-right: 20px;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .scroll-more a:hover {
@@ -98,99 +125,919 @@ a {
     width: 60px;
     height: 1px;
     background-color: #cf1767;
+    margin-left: 20px;
 }
 
-.hero-image {
-    flex: 1;
-    height: 100%;
+/* --- SECTION 2: VIDEO RESUME (UNTOUCHED) --- */
+.section-subtitle {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.max-w-desc {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 420px;
+    background: #0d0d0d;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    color: #888;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.video-placeholder:hover {
+    background: #121212;
+    color: #cf1767;
+}
+
+.play-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    color: #cf1767;
+    transition: transform 0.3s ease;
+}
+
+.video-placeholder:hover .play-icon {
+    transform: scale(1.1);
+}
+
+/* --- SECTION 3: WHO I AM (UNTOUCHED) --- */
+.section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-text p {
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: #cf1767;
+    font-weight: 500;
+}
+
+.about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.academic-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #cf1767;
+    border-radius: 8px;
+    padding: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.academic-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.academic-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.academic-card .card-header i {
+    font-size: 1.8rem;
+    color: #cf1767;
+}
+
+.academic-card .card-header h3 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.academic-card .card-header .sub-title {
+    font-size: 0.85rem;
+    color: #aaa;
+    display: block;
+}
+
+.academic-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.academic-item:last-child {
+    margin-bottom: 0;
+}
+
+.academic-item .label {
+    color: #888;
+}
+
+.academic-item .value {
+    color: #ddd;
+    font-weight: 500;
+}
+
+.highlight-badge {
+    background: rgba(207, 23, 103, 0.15);
+    color: #cf1767 !important;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(207, 23, 103, 0.3);
+}
+
+.career-spotlight {
+    position: relative;
+    background: linear-gradient(135deg, rgba(207, 23, 103, 0.1) 0%, rgba(5, 5, 5, 0.4) 100%);
+    border: 1px solid rgba(207, 23, 103, 0.25);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.career-spotlight:hover {
+    transform: translateY(-4px);
+    border-color: rgba(207, 23, 103, 0.5);
+}
+
+.spotlight-header {
+    margin-bottom: 12px;
+}
+
+.goal-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #cf1767;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spotlight-text {
+    font-size: 0.95rem;
+    color: #ececec;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.spotlight-text strong {
+    color: #cf1767;
+    font-style: normal;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 22px 18px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    border-color: rgba(207, 23, 103, 0.4);
+    background: rgba(207, 23, 103, 0.04);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 1.2rem;
+    color: #cf1767;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.stat-box h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+
+.stat-box p {
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    color: #aaa;
+    font-weight: 400;
+    margin-top: 6px;
+}
+
+.highlight-stat {
+    border-color: rgba(207, 23, 103, 0.2);
+    background: linear-gradient(180deg, rgba(207, 23, 103, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.highlight-stat h2 {
+    color: #cf1767;
+}
+
+/* ==========================================================================
+   SECTION 4: WHAT I WORK WITH (INTERACTIVE ECOSYSTEM DESIGN)
+   ========================================================================== */
+.ecosystem-section {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 120px;
+}
+
+.tech-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    pointer-events: none;
+}
+
+.relative-z {
     position: relative;
     z-index: 2;
 }
 
-.hero-image img {
-    height: 85vh;
-    max-width: 100%;
-    object-fit: cover;
-    opacity: 0.9;
-    filter: contrast(1.1) brightness(0.9); /* Gives that moody look */
+.main-glow-title {
+    text-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
 }
 
-/* --- Other Sections --- */
-.content-section {
-    padding: 100px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.content-section h2 {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #cf1767;
-}
-
-.content-section p {
-    color: #aaa;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Grid for works */
-.grid {
+.ecosystem-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 520px;
+    margin: 50px auto 30px auto;
     display: flex;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+}
+
+/* Center Element SABBIR */
+.center-core {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(5, 5, 5, 0.95) 70%);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+    z-index: 5;
+}
+
+.core-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+}
+
+.core-pulse-ring {
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 1px stroke rgba(16, 185, 129, 0.2);
+    border: 1px dashed rgba(16, 185, 129, 0.3);
+    animation: corePulse 6s linear infinite;
+}
+
+.core-pulse-ring.delay-1 {
+    inset: -35px;
+    animation: corePulse 10s linear infinite reverse;
+    opacity: 0.5;
+}
+
+@keyframes corePulse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating Tech Nodes */
+.tech-node {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, z-index 0.3s;
+}
+
+.node-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: rgba(15, 23, 21, 0.75);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.node-icon {
+    color: #10b981;
+    font-size: 1.1rem;
+}
+
+.node-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* Hover Description Card */
+.node-card {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 220px;
+    background: #0d1412;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 20;
+    text-align: left;
+}
+
+.node-card h4 {
+    font-size: 0.85rem;
+    color: #10b981;
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.node-card p {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+/* Node Hover Effects */
+.tech-node:hover {
+    z-index: 30;
+}
+
+.tech-node:hover .node-inner {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    transform: scale(1.08);
+}
+
+.tech-node:hover .node-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Node Orbital Positioning and Gentle Floating Animation */
+.node-1 {
+    top: 8%;
+    left: 42%;
+    animation: floatSlow 5s ease-in-out infinite alternate;
+}
+
+.node-2 {
+    top: 22%;
+    right: 12%;
+    animation: floatSlow 6s ease-in-out 1s infinite alternate;
+}
+
+.node-3 {
+    top: 52%;
+    right: 8%;
+    animation: floatSlow 5.5s ease-in-out 0.5s infinite alternate;
+}
+
+.node-4 {
+    bottom: 12%;
+    right: 18%;
+    animation: floatSlow 7s ease-in-out 1.5s infinite alternate;
+}
+
+.node-5 {
+    bottom: 8%;
+    left: 38%;
+    animation: floatSlow 6.2s ease-in-out 0.2s infinite alternate;
+}
+
+.node-6 {
+    bottom: 18%;
+    left: 10%;
+    animation: floatSlow 5.8s ease-in-out 1.2s infinite alternate;
+}
+
+.node-7 {
+    top: 48%;
+    left: 5%;
+    animation: floatSlow 6.5s ease-in-out 0.8s infinite alternate;
+}
+
+.node-8 {
+    top: 18%;
+    left: 12%;
+    animation: floatSlow 5.2s ease-in-out 0.4s infinite alternate;
+}
+
+@keyframes floatSlow {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    100% {
+        transform: translateY(-10px) translateX(6px);
+    }
+}
+
+.bottom-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   SECTION 5: THINGS I'VE BUILT (EDITORIAL SHOWCASE DESIGN)
+   ========================================================================== */
+.showcase-section {
+    padding-bottom: 120px;
+}
+
+.showcase-header {
+    margin-bottom: 60px;
+}
+
+.editorial-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.project-layout-reverse {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+/* Project Text Details */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(16, 185, 129, 0.3);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.project-tech-tags {
+    display: flex;
     flex-wrap: wrap;
-    margin-top: 40px;
+    gap: 8px;
+    margin-bottom: 30px;
 }
 
-.card {
-    background: #111;
-    padding: 40px;
-    width: 300px;
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #ddd;
+.project-tech-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    background: rgba(16, 185, 129, 0.08);
+    color: #10b981;
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+.view-project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    border-bottom: 1px solid #10b981;
+    padding-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.view-project-btn i {
+    color: #10b981;
+    transition: transform 0.3s ease;
+}
+
+.view-project-btn:hover {
+    color: #10b981;
+}
+
+.view-project-btn:hover i {
+    transform: translateX(6px);
+}
+
+/* Visual Mockup Container */
+.project-visual {
+    position: relative;
+    width: 100%;
+}
+
+.visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: #070d0b;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.showcase-item:hover .visual-wrapper {
+    transform: scale(1.02);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.visual-overlay-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 20px 20px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Abstract Network UI Visual (Project 01) */
+.network-node-canvas {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.net-node {
+    position: absolute;
+    padding: 6px 12px;
+    background: rgba(15, 23, 21, 0.9);
+    border: 1px solid #10b981;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    z-index: 3;
+}
+
+.n1 {
+    top: 20%;
+    left: 15%;
+}
+
+.n2 {
+    top: 45%;
+    left: 45%;
+    border-color: #3b82f6;
+}
+
+.n3 {
+    top: 18%;
+    right: 18%;
+}
+
+.n4 {
+    bottom: 20%;
+    right: 25%;
+}
+
+.network-svg-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.animated-path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.data-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Abstract Data UI Visual (Project 02) */
+.data-ui-canvas {
+    position: absolute;
+    inset: 20px;
+    background: rgba(10, 16, 14, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 15px;
+}
+
+.ui-panel-header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ef4444;
+}
+
+.dot.yellow {
+    background: #f59e0b;
+}
+
+.dot.green {
+    background: #10b981;
+}
+
+.panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-left: 10px;
+}
+
+.data-block-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.row-active {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.row-id {
+    color: #e2e8f0;
+}
+
+.row-tag {
+    color: #64748b;
+}
+
+.row-status {
+    color: #10b981;
+}
+
+.structure-badge {
+    margin-top: auto;
+    align-self: flex-start;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.showcase-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(16, 185, 129, 0.3), transparent);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 30px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    color: #555;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666;
     font-size: 14px;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
 @media (max-width: 900px) {
-    .main-heading { font-size: 3.5rem; }
-    .hero-image img { height: 60vh; }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-heading {
+        font-size: 3.5rem;
+    }
+
+    /* Section 5 Responsive */
+    .showcase-item,
+    .project-layout-reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-layout-reverse .project-visual {
+        order: 2;
+    }
+
+    .project-layout-reverse .project-details {
+        order: 1;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-content {
+
+    /* Section 4 Compact Layout for Mobile/Tablet */
+    .ecosystem-container {
+        height: auto;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: left;
-        padding-top: 50px;
+        gap: 15px;
+        margin: 30px 0;
     }
-    .hero-image {
-        display: none; /* Mobile e image hide kora hoyeche space er jonno */
+
+    .center-core {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px auto;
     }
-    .grid-overlay {
-        left: 5%;
+
+    .core-name {
+        font-size: 1.1rem;
+    }
+
+    .tech-node {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100%;
+        animation: none !important;
+    }
+
+    .node-inner {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 14px 20px;
+    }
+
+    .node-card {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none !important;
+        width: 100%;
+        margin-top: 8px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: none;
+    }
+
+    .tech-node:hover .node-card {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-heading {
+        font-size: 2.6rem;
+    }
+
+    .video-placeholder {
+        height: 250px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 }
