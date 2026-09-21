@@ -1,0 +1,196 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; /* Deep dark background */
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* --- Landing/Hero Section --- */
+.hero-section {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #050505;
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    width: 300px;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.greeting {
+    color: #cf1767; /* Pinkish color from screenshot */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.main-heading {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+
+.scroll-more {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.scroll-more a {
+    margin-right: 20px;
+}
+
+.scroll-more a:hover {
+    color: #fff;
+}
+
+.scroll-more .line {
+    width: 60px;
+    height: 1px;
+    background-color: #cf1767;
+}
+
+.hero-image {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image img {
+    height: 85vh;
+    max-width: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: contrast(1.1) brightness(0.9); /* Gives that moody look */
+}
+
+/* --- Other Sections --- */
+.content-section {
+    padding: 100px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.content-section h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #cf1767;
+}
+
+.content-section p {
+    color: #aaa;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Grid for works */
+.grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background: #111;
+    padding: 40px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #555;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-heading { font-size: 3.5rem; }
+    .hero-image img { height: 60vh; }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding-top: 50px;
+    }
+    .hero-image {
+        display: none; /* Mobile e image hide kora hoyeche space er jonno */
+    }
+    .grid-overlay {
+        left: 5%;
+    }
+}
