@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abu Sadid</title>
+    <title>Abu Sadid - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts & Font Awesome Icons -->
     <link
@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- SECTION 1: Hero / Landing (UNTOUCHED) -->
+    <!-- SECTION 1: Hero / Landing -->
     <section id="intro" class="hero-section">
         <div class="hero-content">
             <div class="hero-text">
@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    <!-- SECTION 2: Video Resume (UNTOUCHED) -->
+    <!-- SECTION 2: Video Resume -->
     <section id="video-intro" class="content-section bg-black">
         <div class="container text-center">
             <h2 class="section-subtitle">Watch My Introduction</h2>
@@ -48,7 +48,7 @@
         </div>
     </section>
 
-    <!-- SECTION 3: Who I Am / About Section (UNTOUCHED) -->
+    <!-- SECTION 3: Who I Am / About Section -->
     <section id="about" class="content-section bg-greenish">
         <div class="container">
             <h2 class="section-title">Who I Am</h2>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="stat-box">
                     <div class="stat-icon"><i class="fa-solid fa-square-check"></i></div>
-                    <h2>400+</h2>
+                    <h2 class="problems-counter-val">400+</h2>
                     <p>Problems Solved</p>
                 </div>
                 <div class="stat-box highlight-stat">
@@ -149,127 +149,137 @@
         </div>
     </section>
 
-    <!-- SECTION 4: WHAT I WORK WITH (INTERACTIVE ECOSYSTEM REDESIGN) -->
-    <section id="tech-stack" class="content-section bg-black ecosystem-section">
-        <div class="tech-grid-overlay"></div>
-        <div class="container text-center relative-z">
-            <span class="eyebrow-text">TECH STACK</span>
-            <h2 class="section-title main-glow-title">WHAT I WORK WITH</h2>
-            <p class="section-desc max-w-desc">Tools, concepts and technologies I’m using to turn ideas into working
-                solutions.</p>
 
-            <!-- Interactive Orbital Developer Ecosystem Container -->
-            <div class="ecosystem-container" id="ecosystem">
-                <!-- Glowing Interactive Center Core -->
-                <div class="center-core">
-                    <div class="core-pulse-ring"></div>
-                    <div class="core-pulse-ring delay-1"></div>
-                    <span class="core-name">ABU SADID</span>
-                </div>
+    <!-- SECTION 4: WHAT I WORK WITH -->
+    <!-- SECTION 4: WHAT I WORK WITH -->
+    <section id="tech-stack" class="content-section ss-replica-section">
+        <!-- Background colorful shade (glow) -->
+        <div class="ss-bg-glow"></div>
 
-                <!-- Floating Orbiting Tech Nodes -->
-                <!-- Node 1: C++ -->
-                <div class="tech-node node-1" data-tech="cpp">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-code node-icon"></i>
-                        <span class="node-label">C++</span>
-                    </div>
-                    <div class="node-card">
-                        <h4>C++</h4>
-                        <p>Building strong foundations in problem solving, algorithms and competitive programming.</p>
-                    </div>
-                </div>
+        <div class="container relative-z">
+            <div class="text-center" style="margin-bottom: 50px;">
+                <h2 class="section-title main-glow-title"
+                    style="font-family: 'JetBrains Mono', monospace; font-size: 2rem;">WHAT I WORK WITH</h2>
+            </div>
 
-                <!-- Node 2: Java -->
-                <div class="tech-node node-2" data-tech="java">
-                    <div class="node-inner">
-                        <i class="fa-brands fa-java node-icon"></i>
-                        <span class="node-label">Java</span>
-                    </div>
-                    <div class="node-card">
-                        <h4>Java</h4>
-                        <p>Exploring object-oriented programming and application development.</p>
-                    </div>
-                </div>
+            <div class="ss-showcase-wrapper">
+                <!-- LEFT: Rotating Orbit System -->
+                <div class="ss-orbit-area" id="orbit-container">
+                    <!-- Dynamic Connection Line -->
+                    <svg class="ss-svg-lines" id="tech-line-svg">
+                        <line id="tech-active-line" x1="250" y1="250" x2="250" y2="250" stroke="#3b82f6"
+                            stroke-width="2" stroke-dasharray="6,6" />
+                    </svg>
 
-                <!-- Node 3: Python -->
-                <div class="tech-node node-3" data-tech="python">
-                    <div class="node-inner">
-                        <i class="fa-brands fa-python node-icon"></i>
-                        <span class="node-label">Python</span>
+                    <!-- Center Hub -->
+                    <div class="ss-orbit-center">
+                        <i class="fa-solid fa-code center-icon"></i>
+                        <span class="ss-core-name">ABU SADID</span>
+                        <span class="ss-core-sub">CORE SYSTEM</span>
                     </div>
-                    <div class="node-card">
-                        <h4>Python</h4>
-                        <p>Learning Python for development, automation and future AI/ML work.</p>
-                    </div>
-                </div>
 
-                <!-- Node 4: DSA -->
-                <div class="tech-node node-4" data-tech="dsa">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-diagram-project node-icon"></i>
-                        <span class="node-label">DSA</span>
+                    <!-- Inner Ring (Rotates) -->
+                    <div class="ss-ring ss-ring-inner">
+                        <!-- Inner Nodes -->
+                        <div class="ss-node-wrap" style="left: 50%; top: 0%;">
+                            <div class="ss-node active" data-id="cpp" style="--node-color: #3b82f6;">
+                                <i class="fa-solid fa-code ss-node-icon"></i>
+                                <span class="ss-node-text">C++</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 93.3%; top: 75%;">
+                            <div class="ss-node" data-id="java" style="--node-color: #f59e0b;">
+                                <i class="fa-brands fa-java ss-node-icon"></i>
+                                <span class="ss-node-text">Java</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 6.7%; top: 75%;">
+                            <div class="ss-node" data-id="dsa" style="--node-color: #10b981;">
+                                <i class="fa-solid fa-diagram-project ss-node-icon"></i>
+                                <span class="ss-node-text">DSA</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="node-card">
-                        <h4>Data Structures & Algorithms</h4>
-                        <p>Strengthening data structures, algorithms and computational thinking.</p>
-                    </div>
-                </div>
 
-                <!-- Node 5: Competitive Programming -->
-                <div class="tech-node node-5" data-tech="cp">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-trophy node-icon"></i>
-                        <span class="node-label">Competitive Prog.</span>
-                    </div>
-                    <div class="node-card">
-                        <h4>Competitive Programming</h4>
-                        <p>Practicing algorithmic problem solving through programming contests.</p>
-                    </div>
-                </div>
-
-                <!-- Node 6: Web Development -->
-                <div class="tech-node node-6" data-tech="webdev">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-globe node-icon"></i>
-                        <span class="node-label">Web Dev</span>
-                    </div>
-                    <div class="node-card">
-                        <h4>Web Development</h4>
-                        <p>Learning to turn ideas into responsive and interactive web experiences.</p>
+                    <!-- Outer Ring (Rotates Opposite) -->
+                    <div class="ss-ring ss-ring-outer">
+                        <!-- Outer Nodes -->
+                        <div class="ss-node-wrap" style="left: 100%; top: 50%;">
+                            <div class="ss-node" data-id="python" style="--node-color: #eab308;">
+                                <i class="fa-brands fa-python ss-node-icon"></i>
+                                <span class="ss-node-text">Python</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 65.45%; top: 97.55%;">
+                            <div class="ss-node" data-id="cp" style="--node-color: #cf1767;">
+                                <i class="fa-solid fa-trophy ss-node-icon"></i>
+                                <span class="ss-node-text">Comp. Prog</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 9.55%; top: 79.35%;">
+                            <div class="ss-node" data-id="webdev" style="--node-color: #06b6d4;">
+                                <i class="fa-solid fa-globe ss-node-icon"></i>
+                                <span class="ss-node-text">Web Dev</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 9.55%; top: 20.65%;">
+                            <div class="ss-node" data-id="ai" style="--node-color: #8b5cf6;">
+                                <i class="fa-solid fa-brain ss-node-icon"></i>
+                                <span class="ss-node-text">AI</span>
+                            </div>
+                        </div>
+                        <div class="ss-node-wrap" style="left: 65.45%; top: 2.45%;">
+                            <div class="ss-node" data-id="ml" style="--node-color: #ec4899;">
+                                <i class="fa-solid fa-robot ss-node-icon"></i>
+                                <span class="ss-node-text">ML</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Node 7: Artificial Intelligence -->
-                <div class="tech-node node-7" data-tech="ai">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-brain node-icon"></i>
-                        <span class="node-label">Artificial Intelligence</span>
+                <!-- RIGHT: Replica Details Card -->
+                <div class="ss-details-area">
+                    <div class="ss-panel-header">
+                        <div class="ss-title-group">
+                            <div class="ss-panel-icon" id="panel-icon"><i class="fa-solid fa-code"></i></div>
+                            <div>
+                                <h3 id="panel-title">C++</h3>
+                                <span class="ss-panel-category" id="panel-category">CORE LANGUAGE & CP</span>
+                            </div>
+                        </div>
+                        <div class="ss-prof-badge">
+                            PROFICIENCY: <span id="panel-prof-text">92%</span>
+                        </div>
                     </div>
-                    <div class="node-card">
-                        <h4>Artificial Intelligence</h4>
-                        <p>Exploring intelligent systems and the foundations behind modern AI.</p>
-                    </div>
-                </div>
 
-                <!-- Node 8: Machine Learning -->
-                <div class="tech-node node-8" data-tech="ml">
-                    <div class="node-inner">
-                        <i class="fa-solid fa-robot node-icon"></i>
-                        <span class="node-label">Machine Learning</span>
+                    <p class="ss-panel-desc" id="panel-desc">
+                        Building strong foundations in problem solving, data structures, algorithms, and competitive
+                        programming using C++.
+                    </p>
+
+                    <div class="ss-strengths-section">
+                        <h4 class="ss-small-label">KEY STRENGTHS & USE CASES</h4>
+                        <div class="ss-panel-tags" id="panel-tags">
+                            <span>OOP</span>
+                            <span>Pointers</span>
+                            <span>Memory Mgmt</span>
+                            <span>STL</span>
+                        </div>
                     </div>
-                    <div class="node-card">
-                        <h4>Machine Learning</h4>
-                        <p>Building the mathematical and programming foundation for ML.</p>
+
+                    <div class="ss-panel-footer">
+                        <span class="ss-prof-label">Proficiency Level</span>
+                        <div class="ss-prof-bar-bg">
+                            <div class="ss-prof-bar-fill" id="panel-prof-fill"
+                                style="width: 92%; background: linear-gradient(90deg, #3b82f6, #a855f7);"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <p class="bottom-tagline">Always learning. Always building.</p>
         </div>
     </section>
 
-    <!-- SECTION 5: THINGS I'VE BUILT (EDITORIAL HORIZONTAL SHOWCASE REDESIGN) -->
+    <!-- SECTION 5: THINGS I'VE BUILT -->
     <section id="works" class="content-section bg-greenish showcase-section">
         <div class="container">
             <div class="showcase-header">
@@ -279,8 +289,7 @@
             </div>
 
             <div class="editorial-showcase">
-
-                <!-- Project 01 Layout: Text LEFT -> Visual RIGHT -->
+                <!-- Project 01 -->
                 <div class="showcase-item project-layout-normal">
                     <div class="project-details">
                         <span class="project-num">01</span>
@@ -296,10 +305,14 @@
                             <span>MST</span>
                             <span>Network Optimization</span>
                         </div>
-                        <div class="project-action">
+                        <div class="project-action" style="display: flex; gap: 20px; flex-wrap: wrap;">
                             <a href="#" class="view-project-btn">
                                 <span>VIEW PROJECT</span>
                                 <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                            <a href="#" class="view-project-btn" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GITHUB</span>
                             </a>
                         </div>
                     </div>
@@ -307,7 +320,6 @@
                     <div class="project-visual">
                         <div class="visual-wrapper network-bg">
                             <div class="visual-overlay-grid"></div>
-                            <!-- Abstract Network UI Visualization -->
                             <div class="network-node-canvas">
                                 <div class="net-node n1"><span>Router A</span></div>
                                 <div class="net-node n2"><span>Core Switch</span></div>
@@ -329,15 +341,13 @@
                     </div>
                 </div>
 
-                <!-- Divider Line -->
                 <div class="showcase-divider"></div>
 
-                <!-- Project 02 Layout: Visual LEFT -> Text RIGHT -->
+                <!-- Project 02 -->
                 <div class="showcase-item project-layout-reverse">
                     <div class="project-visual">
                         <div class="visual-wrapper data-bg">
                             <div class="visual-overlay-grid"></div>
-                            <!-- Abstract Data Management Interface Visualization -->
                             <div class="data-ui-canvas">
                                 <div class="ui-panel-header">
                                     <span class="dot red"></span>
@@ -383,11 +393,74 @@
                             <span>Stack</span>
                             <span>Queue</span>
                         </div>
-                        <div class="project-action">
+                        <div class="project-action" style="display: flex; gap: 20px; flex-wrap: wrap;">
                             <a href="#" class="view-project-btn">
                                 <span>VIEW PROJECT</span>
                                 <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
+                            <a href="#" class="view-project-btn" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GITHUB</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-divider"></div>
+
+                <!-- Project 03 (Updated to HomeWise) -->
+                <div class="showcase-item project-layout-normal">
+                    <div class="project-details">
+                        <span class="project-num">03</span>
+                        <h3 class="project-title">HomeWise — Personal Home Finance</h3>
+                        <p class="project-description">
+                            HomeWise is a menu-driven personal home finance management system developed in C. It helps
+                            users organize household expenses, calculate per-person costs, analyze monthly running
+                            costs, estimate yearly savings, and manage account credentials through a simple
+                            authentication and settings system.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span>C</span>
+                            <span>stdio.h</span>
+                            <span>string.h</span>
+                            <span>Console App</span>
+                            <span>Finance Logic</span>
+                            <span>Basic Auth</span>
+                        </div>
+                        <div class="project-action" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <a href="#" class="view-project-btn">
+                                <span>VIEW PROJECT</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                            <a href="#" class="view-project-btn" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GITHUB</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-visual">
+                        <div class="visual-wrapper analytics-bg">
+                            <div class="visual-overlay-grid"></div>
+                            <div class="analytics-ui-canvas">
+                                <div class="ui-panel-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="panel-title">homewise_main.c</span>
+                                </div>
+                                <div
+                                    style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #94a3b8; padding-top: 15px; line-height: 1.8;">
+                                    <span style="color: #10b981;">$</span> gcc homewise.c -o homewise<br>
+                                    <span style="color: #10b981;">$</span> ./homewise<br>
+                                    <span style="color: #e2e8f0;">[Auth]</span> Enter Username: admin<br>
+                                    <span style="color: #e2e8f0;">[Auth]</span> Enter Password: ****<br>
+                                    <span style="color: #3b82f6;">Access Granted. Loading Menus...</span>
+                                </div>
+                                <div class="structure-badge">
+                                    <i class="fa-solid fa-terminal"></i> Console Authenticated
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,10 +469,569 @@
         </div>
     </section>
 
-    <!-- FOOTER (UNTOUCHED) -->
-    <footer class="bg-greenish-dark">
-        <p>&copy; 2026 Sabbir Hosen Joy. All rights reserved.</p>
-    </footer>
+    <!-- SECTION 6: THE JOURNEY -->
+    <section id="journey" class="content-section bg-black journey-section">
+        <div class="journey-grid-background"></div>
+        <div class="container relative-z">
+            <div class="journey-header text-center">
+                <span class="eyebrow-text">MILESTONES & GROWTH</span>
+                <h2 class="section-title main-glow-title">THE JOURNEY</h2>
+                <p class="section-desc max-w-desc">"Learning, experimenting, solving, building — and continuing
+                    forward."</p>
+            </div>
+
+            <div class="journey-map-container" id="journeyMap">
+                <svg class="journey-svg-path" viewBox="0 0 1000 850" preserveAspectRatio="none">
+                    <path id="journeyPathBg"
+                        d="M 120 70 L 880 70 L 880 200 L 120 200 L 120 330 L 880 330 L 880 460 L 120 460 L 120 590 L 880 590 L 880 720 L 500 720"
+                        fill="none" stroke="rgba(16, 185, 129, 0.15)" stroke-width="2" stroke-dasharray="6,6" />
+                    <path id="journeyPathGlow"
+                        d="M 120 70 L 880 70 L 880 200 L 120 200 L 120 330 L 880 330 L 880 460 L 120 460 L 120 590 L 880 590 L 880 720 L 500 720"
+                        fill="none" stroke="#10b981" stroke-width="3" />
+                </svg>
+
+                <div class="journey-milestones-grid">
+                    <div class="journey-milestone milestone-left" data-milestone="1">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">01</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">FOUNDATION</span>
+                            <h3 class="milestone-title">EARLY EXPLORATION</h3>
+                            <p class="milestone-desc">Started exploring technology, programming and different areas of
+                                learning.</p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-right" data-milestone="2">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">02</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">ACADEMICS</span>
+                            <h3 class="milestone-title">CSE</h3>
+                            <p class="milestone-desc">Started my Computer Science & Engineering journey at Daffodil
+                                International University.</p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-left" data-milestone="3">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">03</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">CORE CONCEPTS</span>
+                            <h3 class="milestone-title">PROGRAMMING</h3>
+                            <p class="milestone-desc">Started building stronger foundations in programming and core
+                                computer science concepts.</p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-right" data-milestone="4">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">04</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">ALGORITHMIC THINKING</span>
+                            <h3 class="milestone-title">PROBLEM SOLVING</h3>
+                            <p class="milestone-desc">Focused more deeply on Data Structures, Algorithms and Competitive
+                                Programming.</p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-left" data-milestone="5">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">05</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">PRACTICAL DEVELOPMENT</span>
+                            <h3 class="milestone-title">BUILDING</h3>
+                            <p class="milestone-desc">Started turning programming knowledge into practical projects and
+                                web experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-right" data-milestone="6">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">06</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">CURRENT FOCUS</span>
+                            <h3 class="milestone-title">AI / ML</h3>
+                            <p class="milestone-desc">Currently exploring Artificial Intelligence and Machine Learning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="journey-milestone milestone-center" data-milestone="7">
+                        <div class="milestone-node">
+                            <span class="pulse-point"></span>
+                            <span class="m-number">07</span>
+                        </div>
+                        <div class="milestone-content">
+                            <span class="milestone-label">FUTURE HORIZON</span>
+                            <h3 class="milestone-title">NEXT</h3>
+                            <p class="milestone-desc">"Still learning. Still building."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: BEYOND THE CODE -->
+    <section id="beyond-code" class="content-section bg-black magazine-section">
+        <div class="magazine-grid-lines">
+            <div class="vertical-line l1"></div>
+            <div class="vertical-line l2"></div>
+            <div class="vertical-line l3"></div>
+        </div>
+
+        <div class="container relative-z">
+            <div class="magazine-header-spread">
+                <div class="magazine-main-title">
+                    <h1 class="giant-editorial-text magazine-reveal">
+                        BEYOND<br>THE CODE<span class="green-dot">.</span>
+                    </h1>
+                </div>
+
+                <div class="magazine-intro-block magazine-reveal">
+                    <span class="editorial-vertical-label">PERSPECTIVES & EXPERIENCE</span>
+                    <p class="magazine-subtitle">
+                        "Technology is a part of my journey. It isn't the whole story."
+                    </p>
+                </div>
+            </div>
+
+            <div class="magazine-divider-line magazine-reveal"></div>
+
+            <div class="magazine-editorial-grid">
+                <div class="editorial-block block-leadership magazine-reveal">
+                    <div class="editorial-num">01</div>
+                    <h3 class="editorial-heading">LEADERSHIP</h3>
+                    <p class="editorial-body">
+                        "Learning to communicate, collaborate and take responsibility."
+                    </p>
+                </div>
+
+                <div class="editorial-block block-problem-solving magazine-reveal">
+                    <div class="editorial-num">02</div>
+                    <h3 class="editorial-heading">PROBLEM SOLVING</h3>
+                    <p class="editorial-body">
+                        "Learning to approach challenges with patience and structure."
+                    </p>
+                </div>
+
+                <div class="editorial-center-artistic magazine-reveal">
+                    <div class="artistic-box">
+                        <span class="art-caption">CULTURE & ENGAGEMENT</span>
+                        <div class="art-inner-glow"></div>
+                    </div>
+                </div>
+
+                <div class="editorial-block block-creative magazine-reveal">
+                    <div class="editorial-num">03</div>
+                    <h3 class="editorial-heading">CREATIVE THINKING</h3>
+                    <p class="editorial-body">
+                        "Exploring ideas beyond code and finding different ways to express them."
+                    </p>
+                </div>
+
+                <div class="editorial-block block-teamwork magazine-reveal">
+                    <div class="editorial-num">04</div>
+                    <h3 class="editorial-heading">TEAMWORK</h3>
+                    <p class="editorial-body">
+                        "Learning how much better ideas become when people build together."
+                    </p>
+                </div>
+
+                <div class="editorial-block block-activities magazine-reveal">
+                    <div class="editorial-header-row">
+                        <div class="editorial-num">05</div>
+                        <h3 class="editorial-heading">ACTIVITIES</h3>
+                    </div>
+                    <p class="editorial-body">
+                        Active participant across academic seminars, science events, scout and rover activities, debate
+                        forums, and university clubs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: THINK. SOLVE. OPTIMIZE. -->
+    <section id="dev-workspace" class="content-section bg-greenish-dark workspace-section">
+        <div class="container">
+            <div class="workspace-header text-center">
+                <span class="eyebrow-text">ALGORITHMIC WORKSPACE</span>
+                <h2 class="workspace-main-title">THINK.<br>SOLVE.<br>OPTIMIZE.</h2>
+                <p class="section-desc max-w-desc">"Where complex problems become structured solutions."</p>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="terminal-wrapper">
+                    <div class="terminal-header-bar">
+                        <div class="terminal-window-controls">
+                            <span class="control-dot close"></span>
+                            <span class="control-dot minimize"></span>
+                            <span class="control-dot maximize"></span>
+                        </div>
+                        <span class="terminal-title">bash — abu-sadid@dev-machine:~</span>
+                    </div>
+
+                    <div class="terminal-body" id="terminalOutput">
+                        <div class="terminal-line" data-delay="100">
+                            <span class="prompt">$</span> <span class="cmd">whoami</span>
+                        </div>
+                        <div class="terminal-line response" data-delay="400">
+                            Abu Sadid
+                        </div>
+
+                        <div class="terminal-line" data-delay="800">
+                            <span class="prompt">$</span> <span class="cmd">focus</span>
+                        </div>
+                        <div class="terminal-line response text-highlight" data-delay="1100">
+                            Data Structures<br>
+                            Algorithms<br>
+                            Competitive Programming
+                        </div>
+
+                        <div class="terminal-line" data-delay="1500">
+                            <span class="prompt">$</span> <span class="cmd">problems_solved</span>
+                        </div>
+                        <div class="terminal-line response text-highlight" data-delay="1800">
+                            400+
+                        </div>
+
+                        <div class="terminal-line" data-delay="2200">
+                            <span class="prompt">$</span> <span class="cmd">language</span>
+                        </div>
+                        <div class="terminal-line response text-highlight" data-delay="2500">
+                            C++
+                        </div>
+
+                        <div class="terminal-line" data-delay="2900">
+                            <span class="prompt">$</span> <span class="cmd">mindset</span>
+                        </div>
+                        <div class="terminal-line response" data-delay="3200">
+                            Understand &rarr; Solve &rarr; Optimize
+                        </div>
+
+                        <div class="terminal-line" data-delay="3600">
+                            <span class="prompt">$</span> <span class="cmd">status</span>
+                        </div>
+                        <div class="terminal-line response text-glow" data-delay="3900">
+                            STILL LEARNING...
+                        </div>
+
+                        <div class="terminal-line active-line">
+                            <span class="prompt">$</span> <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualizer-wrapper">
+                    <div class="visualizer-header">
+                        <span class="v-label"><i class="fa-solid fa-network-wired"></i> PATHFINDING ALGORITHM</span>
+                        <span class="v-status-badge" id="pathStatusBadge">INITIALIZING...</span>
+                    </div>
+
+                    <div class="visualizer-canvas" id="graphCanvas">
+                        <div class="graph-node node-start" style="top: 20%; left: 15%;" data-node="START">
+                            <span>START</span>
+                        </div>
+                        <div class="graph-node node-a" style="top: 25%; left: 55%;" data-node="A">
+                            <span>NODE</span>
+                        </div>
+                        <div class="graph-node node-b" style="top: 65%; left: 25%;" data-node="B">
+                            <span>NODE</span>
+                        </div>
+                        <div class="graph-node node-c" style="top: 70%; left: 60%;" data-node="C">
+                            <span>NODE</span>
+                        </div>
+                        <div class="graph-node node-target" style="top: 45%; left: 82%;" data-node="TARGET">
+                            <span>TARGET</span>
+                        </div>
+
+                        <svg class="graph-svg" viewBox="0 0 500 350" preserveAspectRatio="xMidYMid meet">
+                            <line id="seg-start-a" x1="75" y1="70" x2="275" y2="87.5" stroke="rgba(255,255,255,0.08)"
+                                stroke-width="2" />
+                            <line id="seg-start-b" x1="75" y1="70" x2="125" y2="227.5" stroke="rgba(255,255,255,0.08)"
+                                stroke-width="2" />
+                            <line id="seg-b-c" x1="125" y1="227.5" x2="300" y2="245" stroke="rgba(255,255,255,0.08)"
+                                stroke-width="2" />
+                            <line id="seg-a-target" x1="275" y1="87.5" x2="410" y2="157.5"
+                                stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+                            <line id="seg-c-target" x1="300" y1="245" x2="410" y2="157.5"
+                                stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+
+                            <polyline id="animatedPathPolyline" points="75,70 125,227.5 300,245 410,157.5" fill="none"
+                                stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <circle id="algoDataPulse" r="5" fill="#34d399" opacity="0" />
+                        </svg>
+
+                        <div class="path-success-label" id="pathSuccessLabel">
+                            <i class="fa-solid fa-check-circle"></i> OPTIMAL PATH FOUND
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cp-stats-grid" id="cpStatsGrid">
+                <div class="cp-stat-card">
+                    <h3>C++</h3>
+                    <p>Competitive Programming</p>
+                </div>
+
+                <div class="cp-stat-card">
+                    <h3>DSA</h3>
+                    <p>Core Focus</p>
+                </div>
+
+                <div class="cp-stat-card">
+                    <h3>CP</h3>
+                    <p>Continuous Practice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: CURRENTLY EXPLORING (Interactive Split-View) -->
+    <section id="exploring" class="content-section bg-black split-explore-section">
+        <div class="container relative-z">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="eyebrow-text">WHAT I'M LEARNING</span>
+                <h2 class="section-title main-glow-title">
+                    CURRENTLY <span style="color: #10b981;">EXPLORING</span>
+                </h2>
+                <p class="section-desc">"Somewhere between curiosity and mastery."</p>
+            </div>
+
+            <div class="explore-split-layout">
+                <!-- Left Side: Clean Minimalist List -->
+                <div class="explore-list-col">
+                    <div class="explore-item active" data-exp="ai">
+                        <span class="exp-num">01</span>
+                        <h3 class="exp-name">Artificial Intelligence</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                    <div class="explore-item" data-exp="ml">
+                        <span class="exp-num">02</span>
+                        <h3 class="exp-name">Machine Learning</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                    <div class="explore-item" data-exp="dsa">
+                        <span class="exp-num">03</span>
+                        <h3 class="exp-name">Advanced DSA</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                    <div class="explore-item" data-exp="python">
+                        <span class="exp-num">04</span>
+                        <h3 class="exp-name">Python</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                    <div class="explore-item" data-exp="web">
+                        <span class="exp-num">05</span>
+                        <h3 class="exp-name">Web Development</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                    <div class="explore-item" data-exp="java">
+                        <span class="exp-num">06</span>
+                        <h3 class="exp-name">Java OOP</h3>
+                        <i class="fa-solid fa-arrow-right exp-arrow"></i>
+                    </div>
+                </div>
+
+                <!-- Right Side: Dynamic Floating Display -->
+                <div class="explore-visual-col">
+                    <div class="exp-visual-window" id="exp-window">
+                        <!-- Animated glowing background blob -->
+                        <div class="exp-bg-blob" id="exp-blob"></div>
+
+                        <div class="exp-visual-content">
+                            <div class="exp-icon-wrap" id="exp-icon-wrap">
+                                <i class="fa-solid fa-brain" id="exp-icon"></i>
+                            </div>
+                            <h3 id="exp-title">Artificial Intelligence</h3>
+                            <p id="exp-desc">Exploring the core concepts behind intelligent systems, search algorithms,
+                                and heuristic problem-solving models.</p>
+
+                            <div class="exp-tech-tags" id="exp-tags">
+                                <span>Heuristics</span>
+                                <span>Search Algorithms</span>
+                                <span>Logic Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 10: WHAT'S NEXT? -->
+    <section id="next" class="content-section bg-black cinematic-section">
+        <div class="cinematic-lighting"></div>
+        <div class="container relative-z">
+            <div class="cinematic-header">
+                <h2 class="cinematic-title">
+                    WHAT'S<br>
+                    <span class="cinematic-title-accent">NEXT?</span>
+                </h2>
+            </div>
+
+            <div class="cinematic-sequence" id="cinematicSequence">
+                <div class="cinematic-item" data-goal="1">
+                    <div class="cinematic-line-tracker"></div>
+                    <div class="cinematic-content">
+                        <span class="goal-num">01</span>
+                        <div class="goal-text-group">
+                            <h3 class="goal-heading">MASTER THE FUNDAMENTALS</h3>
+                            <p class="goal-quote">"Strengthen programming, Data Structures & Algorithms, and core
+                                Computer Science knowledge."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-item" data-goal="2">
+                    <div class="cinematic-line-tracker"></div>
+                    <div class="cinematic-content">
+                        <span class="goal-num">02</span>
+                        <div class="goal-text-group">
+                            <h3 class="goal-heading">BUILD REAL PRODUCTS</h3>
+                            <p class="goal-quote">"Turn concepts and ideas into useful, practical software."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-item" data-goal="3">
+                    <div class="cinematic-line-tracker"></div>
+                    <div class="cinematic-content">
+                        <span class="goal-num">03</span>
+                        <div class="goal-text-group">
+                            <h3 class="goal-heading">EXPLORE AI / ML</h3>
+                            <p class="goal-quote">"Build the foundation required to move deeper into Artificial
+                                Intelligence and Machine Learning."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-item" data-goal="4">
+                    <div class="cinematic-line-tracker"></div>
+                    <div class="cinematic-content">
+                        <span class="goal-num">04</span>
+                        <div class="goal-text-group">
+                            <h3 class="goal-heading">BECOME A BETTER PROBLEM SOLVER</h3>
+                            <p class="goal-quote">"Keep improving the way I think, analyze and build solutions."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cinematic-final-statement" id="cinematicFinal">
+                    <div class="final-statement-line"></div>
+                    <h2 class="final-statement-text">
+                        "THE GOAL IS NOT TO KNOW EVERYTHING.<br>
+                        THE GOAL IS TO KEEP GETTING BETTER."
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: LET'S BUILD -->
+    <section id="contact" class="content-section bg-black build-closing-section">
+        <div class="closing-glow-overlay"></div>
+        <div class="container relative-z flex-closing-layout">
+
+            <div class="build-header-block" id="buildHeader">
+                <div class="title-mask">
+                    <h1 class="giant-build-title">
+                        <span class="reveal-word" id="wordLets">LET'S</span><br>
+                        <span class="reveal-word word-green" id="wordBuild">BUILD.</span>
+                    </h1>
+                </div>
+
+                <div class="build-subtitles" id="buildSubtitles">
+                    <p class="build-lead-sub">Have an idea, project, opportunity, or simply want to talk tech?</p>
+                    <p class="build-callout">Let's turn it into something real.</p>
+                </div>
+
+                <div class="availability-badge" id="availabilityBadge">
+                    <span class="status-pulse-dot"></span>
+                    <span class="status-text">OPEN TO COLLABORATION</span>
+                </div>
+            </div>
+
+            <div class="editorial-links-wrapper" id="editorialLinks">
+                <a href="mailto:abu.sadid@example.com" class="editorial-nav-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="link-meta">
+                        <span class="link-label">EMAIL</span>
+                        <span class="link-value">hello@abu-sadid.dev</span>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                    <div class="link-bottom-line"></div>
+                </a>
+
+                <a href="https://github.com/abu-sadid" class="editorial-nav-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="link-meta">
+                        <span class="link-label">GITHUB</span>
+                        <span class="link-value">github.com/abu-sadid</span>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                    <div class="link-bottom-line"></div>
+                </a>
+
+                <a href="https://linkedin.com/in/abu-sadid" class="editorial-nav-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="link-meta">
+                        <span class="link-label">LINKEDIN</span>
+                        <span class="link-value">linkedin.com/in/abu-sadid</span>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                    <div class="link-bottom-line"></div>
+                </a>
+
+                <a href="#video-intro" class="editorial-nav-link">
+                    <div class="link-meta">
+                        <span class="link-label">RESUME</span>
+                        <span class="link-value">View Video Resume & Credentials</span>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                    <div class="link-bottom-line"></div>
+                </a>
+            </div>
+
+            <footer class="closing-editorial-footer" id="closingFooter">
+                <div class="footer-divider"></div>
+                <div class="footer-content-row">
+                    <div class="footer-identity">
+                        <h4>Abu Sadid</h4>
+                        <p>Computer Science & Engineering</p>
+                        <p class="footer-sub">Daffodil International University</p>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Abu Sadid. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
