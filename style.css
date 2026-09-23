@@ -2917,3 +2917,166 @@ a {
         right: 25px;
     }
 }
+
+/* ============================================================
+   GLOBAL FIXED BACKGROUND & MOVING DOTS (FIXED OVERLAP)
+   ============================================================ */
+/* Body ebong HTML ke puropuri transparent kora holo jeno pichoner background dekha jay */
+html,
+body {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.global-fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #080c14 !important;
+    /* 1st template er original dark color */
+    z-index: -9999;
+    pointer-events: none;
+}
+
+.global-moving-dots {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* Apnar aager template er asol dot er design */
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        radial-gradient(rgba(16, 185, 129, 0.15) 2px, transparent 2px);
+    background-size: 50px 50px, 90px 90px;
+    /* Animation add kora holo jeno slowly move kore */
+    animation: floatingDotsGlobal 110s linear infinite;
+}
+
+@keyframes floatingDotsGlobal {
+    0% {
+        background-position: 0px 0px, 0px 0px;
+    }
+
+    100% {
+        background-position: 1000px 1000px, -900px 900px;
+    }
+}
+
+/* Sob section er background transparent kora holo (Hero section er image chara) */
+.content-section,
+.bg-black,
+.bg-greenish,
+.bg-greenish-dark,
+.about-premium-section,
+.ss-replica-section,
+.showcase-section,
+.journey-section,
+.btc-neon-section,
+.workspace-section,
+.split-explore-section,
+.cinematic-section,
+.build-closing-section {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* ============================================================
+   CENTERED MODERN FOOTER (IMAGE STYLE)
+   ============================================================ */
+.centered-modern-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px 40px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 5;
+}
+
+.footer-logo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    /* Chobir moto peach/orange color */
+    color: #e88e5d;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.footer-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-quote {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-socials a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 1.15rem;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-socials a:hover {
+    color: #e88e5d;
+    border-color: #e88e5d;
+    transform: translateY(-5px);
+    background: rgba(232, 142, 93, 0.1);
+    box-shadow: 0 5px 20px rgba(232, 142, 93, 0.2);
+}
+
+.footer-copyright {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: #475569;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 576px) {
+    .footer-logo {
+        font-size: 2rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .footer-socials {
+        gap: 12px;
+    }
+
+    .footer-socials a {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+    }
+}
