@@ -15,20 +15,85 @@
 
 <body>
 
+    <!-- NAVIGATION BAR -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">AS/&gt;</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#tech-stack">Skills</a>
+                <a href="#works">Projects</a>
+                <a href="#journey">Experience</a>
+                <a href="#awards">Achievements</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- SECTION 1: Hero / Landing -->
-    <section id="intro" class="hero-section">
+    <section id="intro" class="hero-section hero-new-style">
+
+        <!-- Moving Light Dots Animation in Background -->
+        <div class="hero-moving-dots"></div>
+
+        <!-- Ambient Background Light Effects -->
+        <div class="hero-ambient-lights">
+            <div class="hero-light-blob blob-1"></div>
+            <div class="hero-light-blob blob-2"></div>
+        </div>
+
         <div class="hero-content">
-            <div class="hero-text">
-                <h3 class="greeting">Hello, I'm Abu Sadid</h3>
-                <h1 class="main-heading">
-                    Undergraduate<br>
-                    Student<br>
-                    Based In Bangladesh.
-                </h1>
+            <div class="hero-text-area">
+
+                <!-- Title & Subtitle -->
+                <div class="hero-title-group">
+                    <h1 class="hero-main-name">Abu Sadid</h1>
+                    <p class="hero-subtitle">CSE Undergraduate Student | Based in Bangladesh.</p>
+                </div>
+
+                <div class="hero-boxes-wrapper">
+                    <!-- INSIGHTS BOX -->
+                    <div class="hero-box insights-box">
+                        <span class="box-label">INSIGHTS</span>
+                        <div class="status-pill">
+                            <span class="status-dot"></span>
+                            Open to Internships & Opportunities
+                        </div>
+                        <p class="insight-quote">Quitters never win, and winners never quit.</p>
+                    </div>
+
+                    <!-- KEY ACTIONS BOX -->
+                    <div class="hero-box actions-box glass-box">
+                        <span class="box-label">KEY ACTIONS</span>
+                        <div class="action-buttons">
+                            <a href="#about" class="action-btn"><i class="fa-solid fa-user"></i> About Me</a>
+                            <a href="#works" class="action-btn outline-btn">&lt;/&gt; View Projects</a>
+                            <a href="#" class="action-btn green-btn"><i class="fa-solid fa-file-arrow-down"></i>
+                                Download Resume</a>
+                        </div>
+                    </div>
+
+                    <!-- CONNECT BOX -->
+                    <div class="hero-box connect-box">
+                        <span class="box-label">CONNECT</span>
+                        <div class="social-icons">
+                            <a href="https://linkedin.com/in/abu-sadid" target="_blank" class="social-btn"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://github.com/abu-sadid" target="_blank" class="social-btn"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="https://codeforces.com/profile/SadidTasin" target="_blank" class="social-btn"><i
+                                    class="fa-solid fa-code"></i></a>
+                            <a href="mailto:email@example.com" class="social-btn"><i
+                                    class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="scroll-more">
                     <a href="#video-intro">SCROLL FOR MORE</a>
                     <span class="line"></span>
                 </div>
+
             </div>
         </div>
     </section>
@@ -36,10 +101,10 @@
     <!-- SECTION 2: Video Resume -->
     <section id="video-intro" class="content-section bg-black">
         <div class="container text-center">
-            <h2 class="section-subtitle">Watch My Introduction</h2>
-            <p class="section-desc">A short video about who I am and what I am working towards.</p>
+            <h2 class="section-subtitle reveal-on-scroll">Watch My Introduction</h2>
+            <p class="section-desc reveal-on-scroll">A short video about who I am and what I am working towards.</p>
 
-            <div class="video-container">
+            <div class="video-container reveal-on-scroll">
                 <div class="video-placeholder">
                     <i class="fa-solid fa-play-circle play-icon"></i>
                     <p>Resume Video Placeholder</p>
@@ -51,24 +116,24 @@
     <!-- SECTION 3: Who I Am / About Section -->
     <section id="about" class="content-section bg-greenish">
         <div class="container">
-            <h2 class="section-title">Who I Am</h2>
+            <h2 class="section-title reveal-on-scroll">Who I Am</h2>
 
             <div class="about-grid">
                 <!-- Left Side Text Content -->
                 <div class="about-text">
-                    <p>
+                    <p class="reveal-on-scroll">
                         Hi, I’m <strong>Abu Sadid</strong>, a Computer Science and Engineering undergraduate at
                         <strong>Daffodil International University</strong>, driven by curiosity, problem-solving, and a
                         passion for building things with technology.
                     </p>
-                    <p>
+                    <p class="reveal-on-scroll">
                         My journey in CSE is focused on strengthening my foundation in programming, <strong
                             class="highlight-text">Data Structures & Algorithms</strong>, <strong
                             class="highlight-text">Competitive Programming</strong>, and core Computer Science concepts.
                         Alongside this, I’m exploring Java, Python, Web Development, Artificial Intelligence, and
                         Machine Learning to understand how ideas can be transformed into practical solutions.
                     </p>
-                    <p>
+                    <p class="reveal-on-scroll">
                         I enjoy learning by experimenting, solving problems, and working on projects that challenge me
                         to think differently. Rather than limiting myself to one field, I’m continuously exploring
                         different areas of technology and discovering where I can create the most meaningful impact.
@@ -79,7 +144,7 @@
                 <div class="about-cards">
 
                     <!-- Card 1: Academic Snapshot -->
-                    <div class="academic-card">
+                    <div class="academic-card reveal-on-scroll">
                         <div class="card-header">
                             <i class="fa-solid fa-graduation-cap"></i>
                             <div>
@@ -100,7 +165,7 @@
                     </div>
 
                     <!-- Card 2: Career Goal Spotlight -->
-                    <div class="career-spotlight">
+                    <div class="career-spotlight reveal-on-scroll">
                         <div class="spotlight-header">
                             <span class="goal-tag"><i class="fa-solid fa-bullseye"></i> CAREER GOAL</span>
                         </div>
@@ -115,32 +180,32 @@
 
             <!-- Bottom Stats Grid -->
             <div class="stats-grid">
-                <div class="stat-box">
+                <div class="stat-box reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
                     <h2>2nd</h2>
                     <p>Years of Learning</p>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
                     <h2>2</h2>
                     <p>Awards</p>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
                     <h2>3</h2>
                     <p>Projects & Experiments</p>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h2>4+</h2>
                     <p>Technologies Exploring</p>
                 </div>
-                <div class="stat-box">
+                <div class="stat-box reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-square-check"></i></div>
                     <h2 class="problems-counter-val">400+</h2>
                     <p>Problems Solved</p>
                 </div>
-                <div class="stat-box highlight-stat">
+                <div class="stat-box highlight-stat reveal-on-scroll">
                     <div class="stat-icon"><i class="fa-solid fa-lightbulb"></i></div>
                     <h2>&infin;</h2>
                     <p>Ideas to Explore</p>
@@ -149,8 +214,6 @@
         </div>
     </section>
 
-
-    <!-- SECTION 4: WHAT I WORK WITH -->
     <!-- SECTION 4: WHAT I WORK WITH -->
     <section id="tech-stack" class="content-section ss-replica-section">
         <!-- Background colorful shade (glow) -->
@@ -158,13 +221,13 @@
 
         <div class="container relative-z">
             <div class="text-center" style="margin-bottom: 50px;">
-                <h2 class="section-title main-glow-title"
+                <h2 class="section-title main-glow-title reveal-on-scroll"
                     style="font-family: 'JetBrains Mono', monospace; font-size: 2rem;">WHAT I WORK WITH</h2>
             </div>
 
             <div class="ss-showcase-wrapper">
                 <!-- LEFT: Rotating Orbit System -->
-                <div class="ss-orbit-area" id="orbit-container">
+                <div class="ss-orbit-area reveal-on-scroll" id="orbit-container">
                     <!-- Dynamic Connection Line -->
                     <svg class="ss-svg-lines" id="tech-line-svg">
                         <line id="tech-active-line" x1="250" y1="250" x2="250" y2="250" stroke="#3b82f6"
@@ -180,7 +243,6 @@
 
                     <!-- Inner Ring (Rotates) -->
                     <div class="ss-ring ss-ring-inner">
-                        <!-- Inner Nodes -->
                         <div class="ss-node-wrap" style="left: 50%; top: 0%;">
                             <div class="ss-node active" data-id="cpp" style="--node-color: #3b82f6;">
                                 <i class="fa-solid fa-code ss-node-icon"></i>
@@ -203,7 +265,6 @@
 
                     <!-- Outer Ring (Rotates Opposite) -->
                     <div class="ss-ring ss-ring-outer">
-                        <!-- Outer Nodes -->
                         <div class="ss-node-wrap" style="left: 100%; top: 50%;">
                             <div class="ss-node" data-id="python" style="--node-color: #eab308;">
                                 <i class="fa-brands fa-python ss-node-icon"></i>
@@ -238,7 +299,7 @@
                 </div>
 
                 <!-- RIGHT: Replica Details Card -->
-                <div class="ss-details-area">
+                <div class="ss-details-area reveal-on-scroll">
                     <div class="ss-panel-header">
                         <div class="ss-title-group">
                             <div class="ss-panel-icon" id="panel-icon"><i class="fa-solid fa-code"></i></div>
@@ -251,12 +312,10 @@
                             PROFICIENCY: <span id="panel-prof-text">92%</span>
                         </div>
                     </div>
-
                     <p class="ss-panel-desc" id="panel-desc">
                         Building strong foundations in problem solving, data structures, algorithms, and competitive
                         programming using C++.
                     </p>
-
                     <div class="ss-strengths-section">
                         <h4 class="ss-small-label">KEY STRENGTHS & USE CASES</h4>
                         <div class="ss-panel-tags" id="panel-tags">
@@ -266,7 +325,6 @@
                             <span>STL</span>
                         </div>
                     </div>
-
                     <div class="ss-panel-footer">
                         <span class="ss-prof-label">Proficiency Level</span>
                         <div class="ss-prof-bar-bg">
@@ -283,14 +341,14 @@
     <section id="works" class="content-section bg-greenish showcase-section">
         <div class="container">
             <div class="showcase-header">
-                <span class="eyebrow-text">FEATURED WORK</span>
-                <h2 class="section-title">THINGS I'VE BUILT</h2>
-                <p class="section-desc">From algorithms to real-world ideas.</p>
+                <span class="eyebrow-text reveal-on-scroll">FEATURED WORK</span>
+                <h2 class="section-title reveal-on-scroll">THINGS I'VE BUILT</h2>
+                <p class="section-desc reveal-on-scroll">From algorithms to real-world ideas.</p>
             </div>
 
             <div class="editorial-showcase">
                 <!-- Project 01 -->
-                <div class="showcase-item project-layout-normal">
+                <div class="showcase-item project-layout-normal reveal-on-scroll">
                     <div class="project-details">
                         <span class="project-num">01</span>
                         <h3 class="project-title">Campus Cable Planner</h3>
@@ -316,7 +374,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="project-visual">
                         <div class="visual-wrapper network-bg">
                             <div class="visual-overlay-grid"></div>
@@ -341,10 +398,10 @@
                     </div>
                 </div>
 
-                <div class="showcase-divider"></div>
+                <div class="showcase-divider reveal-on-scroll"></div>
 
                 <!-- Project 02 -->
-                <div class="showcase-item project-layout-reverse">
+                <div class="showcase-item project-layout-reverse reveal-on-scroll">
                     <div class="project-visual">
                         <div class="visual-wrapper data-bg">
                             <div class="visual-overlay-grid"></div>
@@ -406,10 +463,10 @@
                     </div>
                 </div>
 
-                <div class="showcase-divider"></div>
+                <div class="showcase-divider reveal-on-scroll"></div>
 
-                <!-- Project 03 (Updated to HomeWise) -->
-                <div class="showcase-item project-layout-normal">
+                <!-- Project 03 -->
+                <div class="showcase-item project-layout-normal reveal-on-scroll">
                     <div class="project-details">
                         <span class="project-num">03</span>
                         <h3 class="project-title">HomeWise — Personal Home Finance</h3>
@@ -474,9 +531,10 @@
         <div class="journey-grid-background"></div>
         <div class="container relative-z">
             <div class="journey-header text-center">
-                <span class="eyebrow-text">MILESTONES & GROWTH</span>
-                <h2 class="section-title main-glow-title">THE JOURNEY</h2>
-                <p class="section-desc max-w-desc">"Learning, experimenting, solving, building — and continuing
+                <span class="eyebrow-text reveal-on-scroll">MILESTONES & GROWTH</span>
+                <h2 class="section-title main-glow-title reveal-on-scroll">THE JOURNEY</h2>
+                <p class="section-desc max-w-desc reveal-on-scroll">"Learning, experimenting, solving, building — and
+                    continuing
                     forward."</p>
             </div>
 
@@ -669,13 +727,14 @@
     <section id="dev-workspace" class="content-section bg-greenish-dark workspace-section">
         <div class="container">
             <div class="workspace-header text-center">
-                <span class="eyebrow-text">ALGORITHMIC WORKSPACE</span>
-                <h2 class="workspace-main-title">THINK.<br>SOLVE.<br>OPTIMIZE.</h2>
-                <p class="section-desc max-w-desc">"Where complex problems become structured solutions."</p>
+                <span class="eyebrow-text reveal-on-scroll">ALGORITHMIC WORKSPACE</span>
+                <h2 class="workspace-main-title reveal-on-scroll">THINK.<br>SOLVE.<br>OPTIMIZE.</h2>
+                <p class="section-desc max-w-desc reveal-on-scroll">"Where complex problems become structured
+                    solutions."</p>
             </div>
 
             <div class="workspace-grid">
-                <div class="terminal-wrapper">
+                <div class="terminal-wrapper reveal-on-scroll">
                     <div class="terminal-header-bar">
                         <div class="terminal-window-controls">
                             <span class="control-dot close"></span>
@@ -736,7 +795,7 @@
                     </div>
                 </div>
 
-                <div class="visualizer-wrapper">
+                <div class="visualizer-wrapper reveal-on-scroll">
                     <div class="visualizer-header">
                         <span class="v-label"><i class="fa-solid fa-network-wired"></i> PATHFINDING ALGORITHM</span>
                         <span class="v-status-badge" id="pathStatusBadge">INITIALIZING...</span>
@@ -785,17 +844,17 @@
             </div>
 
             <div class="cp-stats-grid" id="cpStatsGrid">
-                <div class="cp-stat-card">
+                <div class="cp-stat-card reveal-on-scroll">
                     <h3>C++</h3>
                     <p>Competitive Programming</p>
                 </div>
 
-                <div class="cp-stat-card">
+                <div class="cp-stat-card reveal-on-scroll">
                     <h3>DSA</h3>
                     <p>Core Focus</p>
                 </div>
 
-                <div class="cp-stat-card">
+                <div class="cp-stat-card reveal-on-scroll">
                     <h3>CP</h3>
                     <p>Continuous Practice</p>
                 </div>
@@ -807,14 +866,14 @@
     <section id="exploring" class="content-section bg-black split-explore-section">
         <div class="container relative-z">
             <div class="text-center" style="margin-bottom: 60px;">
-                <span class="eyebrow-text">WHAT I'M LEARNING</span>
-                <h2 class="section-title main-glow-title">
+                <span class="eyebrow-text reveal-on-scroll">WHAT I'M LEARNING</span>
+                <h2 class="section-title main-glow-title reveal-on-scroll">
                     CURRENTLY <span style="color: #10b981;">EXPLORING</span>
                 </h2>
-                <p class="section-desc">"Somewhere between curiosity and mastery."</p>
+                <p class="section-desc reveal-on-scroll">"Somewhere between curiosity and mastery."</p>
             </div>
 
-            <div class="explore-split-layout">
+            <div class="explore-split-layout reveal-on-scroll">
                 <!-- Left Side: Clean Minimalist List -->
                 <div class="explore-list-col">
                     <div class="explore-item active" data-exp="ai">
@@ -874,19 +933,161 @@
             </div>
         </div>
     </section>
+
+    <!-- SECTION 9A: AWARDS & RECOGNITION -->
+    <section id="awards" class="content-section bg-greenish-dark">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="eyebrow-text reveal-on-scroll">ACHIEVEMENTS</span>
+                <h2 class="section-title main-glow-title reveal-on-scroll">
+                    Awards & <span style="color: #3b82f6;">Recognition</span>
+                </h2>
+                <p class="section-desc reveal-on-scroll">Milestones that mark my journey.</p>
+            </div>
+
+            <div class="awards-grid">
+                <!-- Award 1 -->
+                <div class="award-card reveal-on-scroll">
+                    <div class="award-icon"
+                        style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>Take-Off Programming Contest</h3>
+                        <p class="award-org">DIU Programming Contest</p>
+                        <p class="award-desc">Advanced through multiple competitive rounds, showcasing strong
+                            algorithmic problem-solving skills.</p>
+                        <div class="award-badges">
+                            <span class="badge badge-prelim"><i class="fa-solid fa-medal"></i> Preliminary: 13th</span>
+                            <span class="badge badge-final"><i class="fa-solid fa-award"></i> Final: 87th</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="award-card reveal-on-scroll">
+                    <div class="award-icon"
+                        style="color: #10b981; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>Unlock The Algorithm</h3>
+                        <p class="award-org">Algorithmic Programming Contest</p>
+                        <p class="award-desc">Secured a top position in the preliminary round. Unfortunately, could not
+                            participate in the finals due to illness.</p>
+                        <div class="award-badges">
+                            <span class="badge badge-prelim"><i class="fa-solid fa-medal"></i> Preliminary: 8th</span>
+                            <span class="badge badge-sick"><i class="fa-solid fa-notes-medical"></i> Final: Excused
+                                (Sick Leave)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="award-card reveal-on-scroll">
+                    <div class="award-icon"
+                        style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>DIU Mathematics Olympiad</h3>
+                        <p class="award-org">DIU Mathematical Society</p>
+                        <p class="award-desc">Participated in the Mathematics Olympiad, demonstrating analytical
+                            thinking and mathematical problem-solving.</p>
+                        <div class="award-badges">
+                            <span class="badge badge-participant"><i class="fa-solid fa-star"></i> Participant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9B: CODING PROFILES -->
+    <section id="coding-profiles" class="content-section bg-black">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 50px;">
+                <span class="eyebrow-text reveal-on-scroll">COMPETITIVE PROGRAMMING</span>
+                <h2 class="section-title main-glow-title reveal-on-scroll">
+                    Coding <span style="color: #3b82f6;">Profiles</span>
+                </h2>
+                <p class="section-desc reveal-on-scroll">Sharpening problem-solving through consistent practice.</p>
+            </div>
+
+            <div class="profiles-grid">
+                <a href="https://codeforces.com/profile/SadidTasin" target="_blank"
+                    class="profile-card reveal-on-scroll codeforces">
+                    <div class="profile-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="profile-info">
+                        <h3>Codeforces</h3>
+                        <p>@SadidTasin</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                </a>
+
+                <a href="https://judge.beecrowd.com/en/profile/1182552" target="_blank"
+                    class="profile-card reveal-on-scroll beecrowd">
+                    <div class="profile-icon"><span>B</span></div>
+                    <div class="profile-info">
+                        <h3>Beecrowd</h3>
+                        <p>@1182552</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                </a>
+
+                <a href="https://leetcode.com/u/AbuSadid/" target="_blank"
+                    class="profile-card reveal-on-scroll leetcode">
+                    <div class="profile-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="profile-info">
+                        <h3>LeetCode</h3>
+                        <p>@AbuSadid</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                </a>
+
+                <a href="https://www.hackerrank.com/profile/abusadid01" target="_blank"
+                    class="profile-card reveal-on-scroll hackerrank">
+                    <div class="profile-icon"><i class="fa-brands fa-hackerrank"></i></div>
+                    <div class="profile-info">
+                        <h3>HackerRank</h3>
+                        <p>@abusadid01</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                </a>
+
+                <a href="https://vjudge.net/user/abusadid_880" target="_blank"
+                    class="profile-card reveal-on-scroll vjudge">
+                    <div class="profile-icon"><i class="fa-solid fa-gavel"></i></div>
+                    <div class="profile-info">
+                        <h3>Vjudge</h3>
+                        <p>@abusadid_880</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                </a>
+            </div>
+
+            <div class="profile-quote-box reveal-on-scroll">
+                <div class="quote-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <p>I enjoy competitive programming as a way to improve my <strong>problem-solving skills</strong>,
+                    algorithmic thinking, and ability to approach programming challenges efficiently. Every problem
+                    solved is a step toward becoming a better engineer.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 10: WHAT'S NEXT? -->
     <section id="next" class="content-section bg-black cinematic-section">
         <div class="cinematic-lighting"></div>
         <div class="container relative-z">
             <div class="cinematic-header">
-                <h2 class="cinematic-title">
+                <h2 class="cinematic-title reveal-on-scroll">
                     WHAT'S<br>
                     <span class="cinematic-title-accent">NEXT?</span>
                 </h2>
             </div>
 
             <div class="cinematic-sequence" id="cinematicSequence">
-                <div class="cinematic-item" data-goal="1">
+                <div class="cinematic-item reveal-on-scroll" data-goal="1">
                     <div class="cinematic-line-tracker"></div>
                     <div class="cinematic-content">
                         <span class="goal-num">01</span>
@@ -898,7 +1099,7 @@
                     </div>
                 </div>
 
-                <div class="cinematic-item" data-goal="2">
+                <div class="cinematic-item reveal-on-scroll" data-goal="2">
                     <div class="cinematic-line-tracker"></div>
                     <div class="cinematic-content">
                         <span class="goal-num">02</span>
@@ -909,7 +1110,7 @@
                     </div>
                 </div>
 
-                <div class="cinematic-item" data-goal="3">
+                <div class="cinematic-item reveal-on-scroll" data-goal="3">
                     <div class="cinematic-line-tracker"></div>
                     <div class="cinematic-content">
                         <span class="goal-num">03</span>
@@ -921,7 +1122,7 @@
                     </div>
                 </div>
 
-                <div class="cinematic-item" data-goal="4">
+                <div class="cinematic-item reveal-on-scroll" data-goal="4">
                     <div class="cinematic-line-tracker"></div>
                     <div class="cinematic-content">
                         <span class="goal-num">04</span>
@@ -932,7 +1133,7 @@
                     </div>
                 </div>
 
-                <div class="cinematic-final-statement" id="cinematicFinal">
+                <div class="cinematic-final-statement reveal-on-scroll" id="cinematicFinal">
                     <div class="final-statement-line"></div>
                     <h2 class="final-statement-text">
                         "THE GOAL IS NOT TO KNOW EVERYTHING.<br>
@@ -948,7 +1149,7 @@
         <div class="closing-glow-overlay"></div>
         <div class="container relative-z flex-closing-layout">
 
-            <div class="build-header-block" id="buildHeader">
+            <div class="build-header-block reveal-on-scroll" id="buildHeader">
                 <div class="title-mask">
                     <h1 class="giant-build-title">
                         <span class="reveal-word" id="wordLets">LET'S</span><br>
@@ -968,7 +1169,7 @@
             </div>
 
             <div class="editorial-links-wrapper" id="editorialLinks">
-                <a href="mailto:abu.sadid@example.com" class="editorial-nav-link" target="_blank"
+                <a href="mailto:email@example.com" class="editorial-nav-link reveal-on-scroll" target="_blank"
                     rel="noopener noreferrer">
                     <div class="link-meta">
                         <span class="link-label">EMAIL</span>
@@ -980,7 +1181,7 @@
                     <div class="link-bottom-line"></div>
                 </a>
 
-                <a href="https://github.com/abu-sadid" class="editorial-nav-link" target="_blank"
+                <a href="https://github.com/abu-sadid" class="editorial-nav-link reveal-on-scroll" target="_blank"
                     rel="noopener noreferrer">
                     <div class="link-meta">
                         <span class="link-label">GITHUB</span>
@@ -992,7 +1193,7 @@
                     <div class="link-bottom-line"></div>
                 </a>
 
-                <a href="https://linkedin.com/in/abu-sadid" class="editorial-nav-link" target="_blank"
+                <a href="https://linkedin.com/in/abu-sadid" class="editorial-nav-link reveal-on-scroll" target="_blank"
                     rel="noopener noreferrer">
                     <div class="link-meta">
                         <span class="link-label">LINKEDIN</span>
@@ -1004,7 +1205,7 @@
                     <div class="link-bottom-line"></div>
                 </a>
 
-                <a href="#video-intro" class="editorial-nav-link">
+                <a href="#video-intro" class="editorial-nav-link reveal-on-scroll">
                     <div class="link-meta">
                         <span class="link-label">RESUME</span>
                         <span class="link-value">View Video Resume & Credentials</span>
@@ -1016,7 +1217,7 @@
                 </a>
             </div>
 
-            <footer class="closing-editorial-footer" id="closingFooter">
+            <footer class="closing-editorial-footer reveal-on-scroll" id="closingFooter">
                 <div class="footer-divider"></div>
                 <div class="footer-content-row">
                     <div class="footer-identity">
