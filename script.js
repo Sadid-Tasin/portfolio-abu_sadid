@@ -221,23 +221,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ============================================================
-    // 4. SECTION 7: "BEYOND THE CODE" EDITORIAL REVEALS
+    // 4. SECTION 7: "BEYOND THE CODE" STAGGERED REVEAL
     // ============================================================
-    const magazineReveals = document.querySelectorAll(".magazine-reveal");
-    if (magazineReveals.length > 0) {
+    const neonCards = document.querySelectorAll('.btc-neon-card');
+
+    if (neonCards.length > 0) {
         if (prefersReducedMotion) {
-            magazineReveals.forEach(el => el.classList.add("is-visible"));
+            neonCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'none';
+            });
         } else {
-            const magazineObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("is-visible"); });
-            }, { threshold: 0.15 });
-            magazineReveals.forEach((el, idx) => {
-                el.style.transitionDelay = `${(idx % 4) * 0.1}s`;
-                magazineObserver.observe(el);
+            // Set initial state
+            neonCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+            });
+
+            const neonObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Find index of the card to stagger the animation
+                        const index = Array.from(neonCards).indexOf(entry.target);
+                        setTimeout(() => {
+                            entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+
+                            // Remove inline transition after animation completes to allow hover effects to work properly
+                            setTimeout(() => {
+                                entry.target.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                            }, 600);
+                        }, index * 150); // 150ms delay between each card
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            neonCards.forEach(card => {
+                neonObserver.observe(card);
             });
         }
     }
-
     // ============================================================
     // 5. SECTION 8: ALGORITHM VISUALIZER & TERMINAL
     // ============================================================
@@ -463,4 +489,51 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".reveal-on-scroll").forEach(target => {
         scrollRevealObserver.observe(target);
     });
+    // ============================================================
+    // 9. HERO SECTION ROTATING TEXT (TYPING EFFECT)
+    // ============================================================
+    const heroTextArray = [
+        "Competitive Programmer (C/C++)",
+        "Algorithm Problem Solver",
+        "Software Development Enthusiast",
+        "IoT & Electronics Tinkerer",
+        "Hardware & Circuit Assembly",
+        "Tech Explorer & Builder",
+        "Creative Image Manipulation"
+    ];
+
+    let heroTextIndex = 0;
+    let heroCharIndex = 0;
+    const heroTypingDelay = 75;
+    const heroErasingDelay = 40;
+    const heroNewTextDelay = 600; // একটি টেক্সট লেখা শেষ হলে কতক্ষণ ওয়েট করবে
+    const heroRotatingTextElement = document.getElementById("rotating-text");
+
+    function typeHeroText() {
+        if (heroCharIndex < heroTextArray[heroTextIndex].length) {
+            heroRotatingTextElement.textContent += heroTextArray[heroTextIndex].charAt(heroCharIndex);
+            heroCharIndex++;
+            setTimeout(typeHeroText, heroTypingDelay);
+        } else {
+            setTimeout(eraseHeroText, heroNewTextDelay);
+        }
+    }
+
+    function eraseHeroText() {
+        if (heroCharIndex > 0) {
+            heroRotatingTextElement.textContent = heroTextArray[heroTextIndex].substring(0, heroCharIndex - 1);
+            heroCharIndex--;
+            setTimeout(eraseHeroText, heroErasingDelay);
+        } else {
+            heroTextIndex++;
+            if (heroTextIndex >= heroTextArray.length) {
+                heroTextIndex = 0;
+            }
+            setTimeout(typeHeroText, heroTypingDelay + 500);
+        }
+    }
+
+    if (heroRotatingTextElement) {
+        setTimeout(typeHeroText, 1000); // পেজ লোড হওয়ার ১ সেকেন্ড পর টাইপিং শুরু হবে
+    }
 });
