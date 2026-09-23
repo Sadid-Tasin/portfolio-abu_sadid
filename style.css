@@ -753,6 +753,8 @@ a {
     left: 50%;
     border-radius: 50%;
     margin: 0;
+    pointer-events: none;
+    /* Ei line ta add korun */
 }
 
 .ss-ring-inner {
@@ -760,7 +762,10 @@ a {
     height: 280px;
     margin-top: -140px;
     margin-left: -140px;
-    border: 2px dotted rgba(59, 130, 246, 0.3);
+    /* ডটের সাইজ 3px করা হলো এবং অপাসিটি বাড়ানো হলো */
+    border: 3px dotted rgba(59, 130, 246, 0.9);
+    /* ডটগুলোতে গ্লো ইফেক্ট দেওয়ার জন্য drop-shadow যোগ করা হলো */
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
     animation: spinRing 45s linear infinite;
 }
 
@@ -769,7 +774,10 @@ a {
     height: 460px;
     margin-top: -230px;
     margin-left: -230px;
-    border: 2px dotted rgba(16, 185, 129, 0.2);
+    /* ডটের সাইজ 3px করা হলো এবং অপাসিটি বাড়ানো হলো */
+    border: 3px dotted rgba(16, 185, 129, 0.8);
+    /* ডটগুলোতে গ্লো ইফেক্ট দেওয়ার জন্য drop-shadow যোগ করা হলো */
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.8));
     animation: spinRingReverse 60s linear infinite;
 }
 
@@ -804,6 +812,8 @@ a {
     transition: all 0.3s ease;
     z-index: 10;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+    /* Ei line ta add korun */
 }
 
 .ss-node-icon {
@@ -1532,194 +1542,159 @@ a {
     line-height: 1.5;
 }
 
-/* SECTION 7: BEYOND THE CODE */
-.magazine-section {
+/* ============================================================
+   SECTION 7: BEYOND THE CODE (SPINNING NEON BORDER EFFECT)
+   ============================================================ */
+.btc-neon-section {
+    padding: 130px 0;
     position: relative;
-    padding: 140px 0;
-    background-color: #030303;
+    background: #030508;
+    /* Deep dark background to make neon pop */
     overflow: hidden;
 }
 
-.magazine-grid-lines {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    pointer-events: none;
-}
-
-.vertical-line {
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.magazine-header-spread {
+.btc-neon-grid {
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 40px;
-    align-items: flex-end;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
 }
 
-.giant-editorial-text {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 5.5rem;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -2px;
-    color: #f8fafc;
-    text-transform: uppercase;
-}
-
-.green-dot {
-    color: #10b981;
-}
-
-.magazine-intro-block {
+/* Base Card Setup */
+.btc-neon-card {
+    position: relative;
+    background: #000;
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 10px;
+    min-height: 320px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
 }
 
-.editorial-vertical-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    color: #10b981;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+.btc-neon-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    z-index: 10;
 }
 
-.magazine-subtitle {
-    font-size: 1.25rem;
-    color: #cbd5e1;
-    font-weight: 300;
-    line-height: 1.6;
-    border-left: 2px solid #10b981;
-    padding-left: 18px;
+/* Individual Neon Colors Setup */
+.card-cyan {
+    --neon-color: #00f0ff;
 }
 
-.magazine-divider-line {
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 80px;
+.card-magenta {
+    --neon-color: #ff007f;
 }
 
-.magazine-editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 80px;
-    column-gap: 20px;
-    position: relative;
+.card-purple {
+    --neon-color: #a855f7;
 }
 
-.editorial-block {
-    position: relative;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+.card-amber {
+    --neon-color: #f59e0b;
 }
 
-.editorial-block:hover {
-    transform: translateY(-8px);
-    border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(16, 185, 129, 0.02);
+/* The Spinning Gradient Background */
+.btc-neon-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(from 0deg, transparent 70%, var(--neon-color) 100%);
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    animation: spinLaser 4s linear infinite;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
 }
 
-.editorial-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: rgba(16, 185, 129, 0.3);
-    line-height: 1;
-    margin-bottom: 12px;
-}
-
-.editorial-heading {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.editorial-body {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-.block-leadership {
-    grid-column: 1 / span 5;
-}
-
-.block-problem-solving {
-    grid-column: 7 / span 6;
-    margin-top: 40px;
-}
-
-.editorial-center-artistic {
-    grid-column: 3 / span 8;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.artistic-box {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-top: 1px solid rgba(16, 185, 129, 0.3);
-    border-bottom: 1px solid rgba(16, 185, 129, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.art-caption {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 6px;
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.block-creative {
-    grid-column: 2 / span 5;
-}
-
-.block-teamwork {
-    grid-column: 8 / span 5;
-}
-
-.block-activities {
-    grid-column: 2 / span 10;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 5, 5, 0.8) 100%);
-    border-color: rgba(16, 185, 129, 0.2);
-    padding: 40px;
-}
-
-.editorial-header-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.magazine-reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.magazine-reveal.is-visible {
+.btc-neon-card:hover::before {
     opacity: 1;
-    transform: translateY(0);
+    animation-duration: 2s;
+    /* Spins faster on hover */
+    background: conic-gradient(from 0deg, transparent 50%, var(--neon-color) 80%, #ffffff 100%);
+}
+
+@keyframes spinLaser {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Inner Content (Masks the center of the spinning gradient) */
+.neon-content {
+    position: absolute;
+    inset: 2px;
+    /* Creates the 2px glowing border */
+    background: rgba(10, 15, 22, 0.95);
+    border-radius: 14px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.btc-neon-card:hover .neon-content {
+    background: rgba(10, 15, 22, 0.85);
+    /* Slightly transparent on hover for inner glow */
+}
+
+/* Huge Background Number */
+.neon-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    line-height: 1;
+    transition: color 0.4s ease;
+    z-index: -1;
+}
+
+.btc-neon-card:hover .neon-number {
+    color: rgba(255, 255, 255, 0.06);
+}
+
+/* Icon Design */
+.neon-icon {
+    font-size: 2.5rem;
+    color: var(--neon-color);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px var(--neon-color));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.btc-neon-card:hover .neon-icon {
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 0 15px var(--neon-color));
+}
+
+/* Typography */
+.neon-content h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.neon-content p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
 }
 
 /* SECTION 8: THINK. SOLVE. OPTIMIZE. */
@@ -2645,4 +2620,32 @@ a {
 .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================================================
+   HERO ROTATING TEXT (TYPING EFFECT)
+   ============================================================ */
+.hero-rotating-text {
+    color: #10b981;
+    font-weight: 500;
+}
+
+.hero-cursor {
+    display: inline-block;
+    color: #10b981;
+    margin-left: 2px;
+    font-weight: bold;
+    animation: heroBlink 1s infinite;
+}
+
+@keyframes heroBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
