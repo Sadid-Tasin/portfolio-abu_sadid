@@ -96,9 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSSNode = document.querySelector(".ss-node.active");
 
     function hexToRgba(hex, opacity) {
-        let r = parseInt(hex.slice(1, 3), 16),
-            g = parseInt(hex.slice(3, 5), 16),
-            b = parseInt(hex.slice(5, 7), 16);
+        let r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
         return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     }
 
@@ -124,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ssPanelTags.appendChild(span);
         });
 
-        // Unique gradient for the progress bar based on node color
         ssPanelProfFill.style.width = data.profWidth;
         ssPanelProfFill.style.background = `linear-gradient(90deg, ${data.color}, #ffffff)`;
 
@@ -165,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(trackActiveNode);
     }
     trackActiveNode();
-
 
     // ============================================================
     // 3. SECTION 6: "THE JOURNEY" SCROLL-DRIVEN LINE & NODES
@@ -224,7 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
         handleResponsivePath();
     }
 
-
     // ============================================================
     // 4. SECTION 7: "BEYOND THE CODE" EDITORIAL REVEALS
     // ============================================================
@@ -242,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }
-
 
     // ============================================================
     // 5. SECTION 8: ALGORITHM VISUALIZER & TERMINAL
@@ -314,7 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (workspaceSection) workspaceObserver.observe(workspaceSection);
     }
 
-
     // ============================================================
     // 6. SECTION 9: EXPLORATION (INTERACTIVE SPLIT-VIEW)
     // ============================================================
@@ -323,37 +316,37 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Artificial Intelligence",
             desc: "Exploring the core concepts behind intelligent systems, search algorithms, and heuristic problem-solving models.",
             tags: ["Heuristics", "Search Algorithms", "Logic Models"],
-            icon: "fa-solid fa-brain", color: "#8b5cf6" // Purple
+            icon: "fa-solid fa-brain", color: "#8b5cf6"
         },
         ml: {
             title: "Machine Learning",
             desc: "Building mathematical foundations (Linear Algebra, Calculus, Stats) required for modern Machine Learning models.",
             tags: ["Math", "Data Models", "Statistics", "PyTorch"],
-            icon: "fa-solid fa-robot", color: "#ec4899" // Pink
+            icon: "fa-solid fa-robot", color: "#ec4899"
         },
         dsa: {
             title: "Advanced DSA",
             desc: "Going deeper into optimization, complex data structures like Graphs and Trees, and dynamic programming.",
             tags: ["Graphs", "Trees", "DP", "Complexity"],
-            icon: "fa-solid fa-diagram-project", color: "#10b981" // Emerald
+            icon: "fa-solid fa-diagram-project", color: "#10b981"
         },
         python: {
             title: "Python",
             desc: "Mastering Python for software development, automation scripts, and future AI/ML integration.",
             tags: ["Automation", "Data Handling", "Scripts"],
-            icon: "fa-brands fa-python", color: "#eab308" // Yellow
+            icon: "fa-brands fa-python", color: "#eab308"
         },
         web: {
             title: "Web Development",
             desc: "Learning to build modern, responsive, and interactive web experiences using the latest frontend technologies.",
             tags: ["HTML/CSS", "JavaScript", "React", "Responsive"],
-            icon: "fa-solid fa-globe", color: "#06b6d4" // Cyan
+            icon: "fa-solid fa-globe", color: "#06b6d4"
         },
         java: {
             title: "Java OOP",
             desc: "Deepening my understanding of object-oriented programming, class design, and scalable application architecture.",
             tags: ["Classes", "Inheritance", "JVM", "Spring Base"],
-            icon: "fa-brands fa-java", color: "#f97316" // Orange
+            icon: "fa-brands fa-java", color: "#f97316"
         }
     };
 
@@ -373,30 +366,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     expItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
-            // Remove active class from all
             expItems.forEach(el => el.classList.remove("active"));
             item.classList.add("active");
 
             const key = item.getAttribute("data-exp");
             const data = exploreData[key];
 
-            // Add fade class for animation
             expWindow.classList.add("fade-content");
 
             setTimeout(() => {
-                // Update Content
                 expTitle.textContent = data.title;
                 expDesc.textContent = data.desc;
                 expIcon.className = data.icon;
 
-                // Update Colors
                 expIconWrap.style.color = data.color;
                 expIconWrap.style.background = hexToRgbaExp(data.color, 0.1);
                 expIconWrap.style.borderColor = hexToRgbaExp(data.color, 0.3);
 
                 expBlob.style.background = `radial-gradient(circle, ${hexToRgbaExp(data.color, 0.3)} 0%, transparent 70%)`;
 
-                // Update Tags
                 expTags.innerHTML = "";
                 data.tags.forEach(tag => {
                     const span = document.createElement("span");
@@ -404,12 +392,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     expTags.appendChild(span);
                 });
 
-                // Remove fade class to animate in
                 expWindow.classList.remove("fade-content");
-            }, 300); // Wait for fade out
+            }, 300);
         });
     });
-
 
     // ============================================================
     // 7. SECTION 10 & 11: CINEMATIC & LET'S BUILD ENTRANCE
@@ -440,4 +426,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.2 });
     if (contactSection) contactObserver.observe(contactSection);
+
+    // ============================================================
+    // 8. GLOBAL SCROLL REVEAL ANIMATION (Smooth Staggered Fade-Up)
+    // ============================================================
+    const elementsToReveal = document.querySelectorAll(`
+        section:not(#intro) h2, 
+        section:not(#intro) h3, 
+        section:not(#intro) p, 
+        section:not(#intro) .eyebrow-text,
+        .academic-card, .career-spotlight, .stat-box, 
+        .showcase-item, .editorial-block, .terminal-wrapper, 
+        .visualizer-wrapper, .cp-stat-card, .explore-item, 
+        .exp-visual-window, .cinematic-item, .editorial-nav-link,
+        .award-card, .profile-card, .profile-quote-box
+    `);
+
+    elementsToReveal.forEach(el => {
+        el.classList.add("reveal-on-scroll");
+    });
+
+    const scrollRevealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("is-visible");
+                }, index * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px"
+    });
+
+    document.querySelectorAll(".reveal-on-scroll").forEach(target => {
+        scrollRevealObserver.observe(target);
+    });
 });
