@@ -2649,3 +2649,235 @@ a {
         opacity: 0;
     }
 }
+
+/* ============================================================
+   BENTO BOX SOCIAL GRID (NEXT-GEN DESIGN)
+   ============================================================ */
+.bento-social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 80px auto;
+}
+
+.bento-card {
+    position: relative;
+    background: rgba(20, 25, 35, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 180px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
+    text-decoration: none;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Define Grid Spaces and Brand Colors */
+.bento-card.github {
+    grid-column: span 2;
+    --brand: #ffffff;
+}
+
+.bento-card.linkedin {
+    grid-column: span 1;
+    --brand: #0A66C2;
+}
+
+.bento-card.facebook {
+    grid-column: span 1;
+    --brand: #1877F2;
+}
+
+.bento-card.instagram {
+    grid-column: span 1;
+    --brand: #E1306C;
+}
+
+.bento-card.email {
+    grid-column: span 1;
+    --brand: #EA4335;
+}
+
+.bento-card.resume {
+    grid-column: span 3;
+    --brand: #10b981;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 45px;
+}
+
+/* Hover Glowing Light Effect */
+.bento-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, var(--brand), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    mix-blend-mode: screen;
+}
+
+.bento-card:hover::before {
+    opacity: 0.15;
+}
+
+/* Animated Bottom Line */
+.bento-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.bento-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Giant Floating Background Icon */
+.bento-bg-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.04);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.bento-card:hover .bento-bg-icon {
+    color: var(--brand);
+    transform: scale(1.3) rotate(-15deg);
+    opacity: 0.3;
+}
+
+/* Text & Content Formatting */
+.bento-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.bento-handle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.bento-card:hover .bento-title {
+    color: var(--brand);
+}
+
+/* Animated Arrow Button */
+.bento-link-arrow {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.bento-card:hover .bento-link-arrow {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 15px var(--brand);
+}
+
+/* Resume Specific Tweaks */
+.resume-inner {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    z-index: 2;
+}
+
+.resume-icon-pulse {
+    width: 65px;
+    height: 65px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #10b981;
+}
+
+.bento-card.resume:hover .resume-icon-pulse {
+    animation: pulseGlow 1.5s infinite;
+    background: #10b981;
+    color: #000;
+}
+
+.bento-card.resume .bento-link-arrow {
+    position: relative;
+    bottom: 0;
+    right: 0;
+}
+
+.bento-card.resume:hover .bento-link-arrow {
+    transform: translateY(5px);
+}
+
+/* Responsive View for Mobile */
+@media (max-width: 768px) {
+    .bento-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-card {
+        grid-column: span 1 !important;
+        min-height: 140px;
+    }
+
+    .bento-card.resume {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .bento-card.resume .bento-link-arrow {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+    }
+}
