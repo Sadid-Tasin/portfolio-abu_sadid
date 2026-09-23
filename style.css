@@ -114,15 +114,28 @@ a {
 }
 
 /* --- SECTION 1: HERO UPDATES --- */
+
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    /* Clean transparent gradient to keep picture completely bright */
-    background-image: linear-gradient(to right, rgba(8, 12, 20, 0.95) 0%, rgba(8, 12, 20, 0.4) 40%, transparent 70%), url('background.png');
-    background-size: cover;
-    background-position: center right;
+    background-color: #080c14;
+    /* Ekta base color rakha bhalo */
+
+    background-image:
+        /* 1. Top Layer: Kalo fade effect */
+        linear-gradient(to right, rgba(8, 12, 20, 0.95) 0%, rgba(8, 12, 20, 0.4) 40%, transparent 70%),
+        /* 2. Middle Layer: Apnar chobi */
+        url('photo2.png'),
+        /* 3. Bottom Layer: Pichoner green glow */
+        radial-gradient(circle at 40% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 60%);
+
+    /* Protiti layer er jonno alada background-size */
+    /* 100% hobe gradient er jonno, 60% hobe image er jonno */
+    background-size: 34% auto;
+    background-position: 80% center, 80% bottom;
+
     background-repeat: no-repeat;
     overflow: hidden;
 }
@@ -3052,31 +3065,30 @@ body {
     transform: translateY(-5px);
     background: rgba(232, 142, 93, 0.1);
     box-shadow: 0 5px 20px rgba(232, 142, 93, 0.2);
-}
 
-.footer-copyright {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.85rem;
-    color: #475569;
-    letter-spacing: 0.5px;
-}
-
-@media (max-width: 576px) {
-    .footer-logo {
-        font-size: 2rem;
-    }
-
-    .footer-subtitle {
+    .footer-copyright {
+        font-family: 'Roboto', sans-serif;
         font-size: 0.85rem;
+        color: #475569;
+        letter-spacing: 0.5px;
     }
 
-    .footer-socials {
-        gap: 12px;
-    }
+    @media (max-width: 576px) {
+        .footer-logo {
+            font-size: 2rem;
+        }
 
-    .footer-socials a {
-        width: 42px;
-        height: 42px;
-        font-size: 1rem;
+        .footer-subtitle {
+            font-size: 0.85rem;
+        }
+
+        .footer-socials {
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 42px;
+            height: 42px;
+            font-size: 1rem;
+        }
     }
-}
