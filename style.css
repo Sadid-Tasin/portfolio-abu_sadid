@@ -142,7 +142,7 @@ a {
         /* 2. Middle Layer: Apnar chobi */
         url('photo2.png'),
         /* 3. Bottom Layer: Pichoner green glow */
-        radial-gradient(circle at 70% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 45%);
+        radial-gradient(circle at 70% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 40%);
 
     /* Gradient gulo full-screen thakbe, kintu chobi ta 34% size e thakbe */
     background-size: 100% 100%, 34% auto, 100% 100%;
