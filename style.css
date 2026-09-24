@@ -129,7 +129,7 @@ a {
         /* 2. Middle Layer: Apnar chobi */
         url('photo2.png'),
         /* 3. Bottom Layer: Pichoner green glow */
-        radial-gradient(circle at 40% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 60%);
+        radial-gradient(circle at 40% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 65%);
 
     /* Protiti layer er jonno alada background-size */
     /* 100% hobe gradient er jonno, 60% hobe image er jonno */
