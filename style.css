@@ -115,13 +115,26 @@ a {
 
 /* --- SECTION 1: HERO UPDATES --- */
 
+/* 1. .hero-section theke background image er code gulo remove kore din */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     background-color: #080c14;
-    /* Ekta base color rakha bhalo */
+    overflow: hidden;
+}
+
+/* 2. Notun ei class ta CSS file er jekono jaygay (hero section er ashepase) add korun */
+.hero-profile-pic {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Eta dot (z-index: 1) er upore ebong text (z-index: 3) er niche thakbe */
+    pointer-events: none;
+    /* Mouse er sathe jeno conflict na kore */
 
     background-image:
         /* 1. Top Layer: Kalo fade effect */
@@ -129,15 +142,12 @@ a {
         /* 2. Middle Layer: Apnar chobi */
         url('photo2.png'),
         /* 3. Bottom Layer: Pichoner green glow */
-        radial-gradient(circle at 40% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 65%);
+        radial-gradient(circle at 70% 40%, rgba(0, 255, 100, 0.15) 0%, transparent 45%);
 
-    /* Protiti layer er jonno alada background-size */
-    /* 100% hobe gradient er jonno, 60% hobe image er jonno */
-    background-size: 34% auto;
-    background-position: 80% center, 80% bottom;
-
+    /* Gradient gulo full-screen thakbe, kintu chobi ta 34% size e thakbe */
+    background-size: 100% 100%, 34% auto, 100% 100%;
+    background-position: left, 80% bottom, 80% center;
     background-repeat: no-repeat;
-    overflow: hidden;
 }
 
 /* --- Smooth Moving Light Dots Animation --- */
@@ -145,6 +155,7 @@ a {
     position: absolute;
     inset: 0;
     z-index: 1;
+    /* Dot pic er pichone (z-index 1) thakbe */
     background-image:
         radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
         radial-gradient(rgba(16, 185, 129, 0.15) 2px, transparent 2px);
@@ -152,6 +163,7 @@ a {
     animation: floatingDots 110s linear infinite;
     pointer-events: none;
 }
+
 
 @keyframes floatingDots {
     0% {
@@ -222,7 +234,7 @@ a {
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .hero-text-area {
