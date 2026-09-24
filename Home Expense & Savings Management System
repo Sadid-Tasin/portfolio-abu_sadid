@@ -1,0 +1,591 @@
+#include<stdio.h>
+
+#include<string.h>
+
+void HouseRent()
+
+{
+
+    printf("\n##.House Rent Details:\n");
+
+    printf("  1. Monthly Rent : 12,000\n");
+
+    printf("  2. Advance Payment : 10,000\n");
+
+    printf("  3. Maintenance Charge : 500\n");
+
+    printf("  4.Security and Maid Charge : 2500\n");
+
+}
+
+void Food()
+
+{
+
+    printf("\n##.Food Expense Details:\n");
+
+    printf("  1. Groceries : 3000-4000\n");
+
+    printf("  2. Veg/Meat Purchase : 2500-3000\n");
+
+    printf("  3. Monthly Food Storage : 1500-2500\n");
+
+    printf("  4. Special Item : 1000-1500\n");
+
+}
+
+void Utilities()
+
+{
+
+    printf("\n##.Utilities Details:\n");
+
+    printf("  1. Electricity Bill : 2000\n");
+
+    printf("  2. Gas Bill : 1080\n");
+
+    printf("  3. Water Bill : 500\n");
+
+    printf("  4. Internet Bill : 800\n");
+
+}
+
+void Household()
+
+{
+
+    printf("\n##.Household Items Details:\n");
+
+    printf("  1. Cleaning Items : 500-700\n");
+
+    printf("  2. Kitchen Items : 200-400\n");
+
+    printf("  3. Home Repair & Maintenance Items : 250-500\n");
+
+    printf("  4. Water Cleaner & WASA Bill : 400-600\n");
+
+}
+
+void Information()
+
+{
+
+    printf("              *              \n");
+
+    printf("            *   *            \n");
+
+    printf("          *       *          \n");
+
+    printf("        *  Welcome  *        \n");
+
+    printf("      *       TO      *      \n");
+
+    printf("    *        Our        *    \n");
+
+    printf("      *      Home     *      \n");
+
+    printf("        *           *        \n");
+
+    printf("          *       *          \n");
+
+    printf("            *   *            \n");
+
+    printf("              *              \n");
+
+    while(1)
+
+    {
+
+        printf("\n*** Select an expense category ***\n");
+
+        printf("   1. House Rent\n");
+
+        printf("   2. Food\n");
+
+        printf("   3. Utilities (Electricity, Gas, Water,Internet)\n");
+
+        printf("   4. Household Items\n");
+
+        printf("   5. Exit from this program.\n");
+
+        printf("\nEnter your choice (1-5): ");
+
+        int choice;
+
+        scanf("%d", &choice);
+
+        switch(choice)
+
+        {
+
+        case 1 :
+
+            HouseRent();
+
+            break;
+
+        case 2 :
+
+            Food();
+
+            break;
+
+        case 3 :
+
+            Utilities();
+
+            break;
+
+        case 4 :
+
+            Household();
+
+            break;
+
+        case 5:
+
+            printf("\nExiting the program...\n");
+
+            return;
+
+        default :
+
+            printf("Invalid Choice\n");
+
+        }
+
+    }
+
+}
+
+
+
+void calculate()
+
+{
+
+    printf("\n**\n");
+
+    printf("****** Monthly Expense Calculator ********\n");
+
+    printf("\n");
+
+    char name[100][100];
+
+    double amount[100],total=0,person;
+
+    int n,i,members;
+
+    printf("\nHow many types of expenses do you want to calculate?\n");
+
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+
+    {
+
+        printf("\nEnter expense name: ");
+
+        scanf(" %[^\n]", name[i]);
+
+        printf("\nEnter amount for %s: ", name[i]);
+
+        scanf("%lf",&amount[i]);
+
+        total += amount[i];
+
+    }
+
+    printf("\n*Expense List*\n");
+
+    for(i=0;i<n;i++)
+
+    {
+
+        printf("%s : %.2lf\n",name[i],amount[i]);
+
+    }
+
+    printf("\nEnter number of members: ");
+
+    scanf("%d",&members);
+
+    person = (total/members);
+
+    printf("\n******* Final Result **********\n");
+
+    printf("\n Per Person Expense (for %d people) = %.2lf\n",members,person);
+
+}
+
+
+
+void savings()
+
+{
+
+    printf("\n**\n");
+
+    printf("******* Yearly Savings Calculator ********\n");
+
+    printf("\n");
+
+    char months[12][10]=
+
+    {
+
+        "January","February","March","April",
+
+        "May","June","July","August","September",
+
+        "October","November","December"
+
+    };
+
+    double FixedCost,RunningCost,Loan=0,Profit=0,MonthlySaving;
+
+    double YearlySaving,FinalSaving;
+
+    printf("\n*Note: An advance of 1000 taka has been taken for urgent needs.*\n");
+
+    printf("\nEnter fixed monthly cost per person: ");
+
+    scanf("%lf",&FixedCost);
+
+    for(int i=0; i<12; i++)
+
+    {
+
+        printf("Enter running cost for %s: ", months[i]);
+
+        scanf("%lf",&RunningCost);
+
+        if(RunningCost>FixedCost)
+
+        {
+
+            Loan += (RunningCost-FixedCost);
+
+        }
+
+        else if(RunningCost<FixedCost)
+
+        {
+
+            Profit += (FixedCost-RunningCost);
+
+        }
+
+    }
+
+    printf("\nEnter fixed saving amount for each month: ");
+
+    scanf("%lf",&MonthlySaving);
+
+    YearlySaving = (MonthlySaving*12);
+
+    FinalSaving = (YearlySaving + Profit) - Loan + 1000;
+
+    printf("\n**YEAR END REPORT\n");
+
+    printf("Total Loan (extra cost) = %.2lf\n", Loan);
+
+    printf("Total Profit (saved amount) = %.2lf\n", Profit);
+
+    printf("Total Yearly Saving (from monthly saving) = %.2lf\n",YearlySaving);
+
+    printf("Advance taken for urgent needs = 1000.00\n");
+
+    printf("------------------------------------------\n");
+
+    printf("\nFinal Remaining Saving After Adjustment = %.2lf\n",FinalSaving);
+
+}
+
+int ChangePassword(char pass[])
+
+{
+
+    char oldPass[50], newPass[50];
+
+    printf("\nEnter old password: ");
+
+    scanf("%s", oldPass);
+
+    if(strcmp(oldPass, pass) == 0)
+
+    {
+
+        printf("Enter new password: ");
+
+        scanf("%s", newPass);
+
+        strcpy(pass, newPass);   // Direct update
+
+        printf("Password changed successfully!\n");
+
+        return 1;
+
+    }
+
+    else
+
+    {
+
+        printf("Incorrect old password!\n");
+
+        return 0;
+
+    }
+
+}
+
+int Setting(char pass[])
+
+{
+
+    int choice;
+
+    while(1)
+
+    {
+
+        printf("\n====== SETTINGS ======\n");
+
+        printf("    1. Change Password\n");
+
+        printf("    2. Back to Main Menu\n");
+
+        printf("======================\n");
+
+        printf("Enter your choice: ");
+
+        scanf("%d", &choice);
+
+        switch (choice)
+
+        {
+
+            case 1:
+
+                if(ChangePassword(pass))
+
+                {
+
+                    return 1;
+
+                }
+
+                break;
+
+            case 2:
+
+                return 0;
+
+            default:
+
+                printf("Invalid Choice!\n");
+
+        }
+
+    }
+
+}
+
+
+
+int main()
+
+{
+
+    char user[50], pass[50];
+
+    int attempts=0, logged_in=0;
+
+    for(int i=0; i<3; i++)
+
+    {
+
+        printf("\n===================== LOGIN PANEL =====================\n");
+
+        printf("\n Please Enter the Correct Username & Password to Access the Program...\n");
+
+        printf("\n Username : ");
+
+        scanf("%s", user);
+
+        printf(" Password : ");
+
+        scanf("%s", pass);
+
+        if(strcmp(user, "LogicLoomers") == 0 && strcmp(pass, "$Money#") == 0)
+
+        {
+
+            printf("\n Loging Successful! Welcome to our Project.\n ");
+
+            logged_in = 1;
+
+            break;
+
+        }
+
+        else
+
+        {
+
+            printf(" \n Invalid username or password! \n ");
+
+            attempts++;
+
+            if(attempts<3)
+
+            {
+
+                printf(" \n Press Enter to Retry \n");
+
+                getchar();
+
+                getchar();
+
+            }
+
+        }
+
+    }
+
+    if(logged_in == 0)
+
+    {
+
+        printf(" \n Warning: Maximum attempt limit crossed. Program locked automatically!! \n");
+
+        return 0;
+
+    }
+
+    int choice;
+
+    for(int j=1; j>0; j++)
+
+    {
+
+        printf("\n******* PROGRAM LIST ********\n");
+
+        printf("     1. Monthly Home Expense Category Display System.\n");
+
+        printf("     2. Per Person Expense Calculation System.\n");
+
+        printf("     3. Year-End Savings & Cost Adjustment System.\n");
+
+        printf("     4. Settings.\n");
+
+        printf("     5. End Operation.\n");
+
+        printf("\n*\n");
+
+        printf("Please Enter Your Choice From 1 to 5\n");
+
+        printf("Choice : ");
+
+        scanf("%d",&choice);
+
+        switch (choice)
+
+        {
+
+            case 1:
+
+                Information();
+
+                break;
+
+            case 2:
+
+                calculate();
+
+                break;
+
+            case 3:
+
+                savings();
+
+                break;
+
+            case 4:
+
+                if(Setting(pass))
+
+                    {
+
+                        printf("\nPassword changed! Please login again.\n");
+
+                        logged_in = 0;
+
+                        char passInput[50];
+
+                        for(int i = 0; i < 3; i++)
+
+                        {
+
+                            printf("\n===== RE-LOGIN REQUIRED =====\n");
+
+                            printf(" Username: ");
+
+                            scanf("%s", user);
+
+                            printf(" Password: ");
+
+                            scanf("%s", passInput);
+
+                            if(strcmp(user, "LogicLoomers") == 0 && strcmp(passInput, pass) == 0)
+
+                            {
+
+                                printf("Re-login success!\n");
+
+                                logged_in = 1;
+
+                                break;
+
+                            }
+
+                            else
+
+                                printf("Invalid! Try again.\n");
+
+                        }
+
+                        if(!logged_in)
+
+                        {
+
+                            printf("Too many attempts. Program locked.\n");
+
+                            return 0;
+
+                        }
+
+                    }
+
+                    break;
+
+            case 5:
+
+                printf("\n +++Thank you for being a part of this session. Logging out now......\n");
+
+                printf("==================================GOODBYE===============================\n");
+
+                return 0;
+
+            default:
+
+                printf("Invalid Choice. Try again.....\n");
+
+                break;
+
+        }
+
+    }
+
+}
