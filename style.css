@@ -1555,14 +1555,23 @@ a {
 }
 
 .btc-neon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    /* Grid er bodole flexbox use korchi jeno center kora easy hoy */
+    flex-wrap: wrap;
+    /* Jeno jayga na thakle porer line e chole jay */
+    justify-content: center;
+    /* Card guloke majhkhan theke align korbe */
     gap: 35px;
     margin-top: 50px;
 }
 
-/* Base Card Setup */
+/* Card er size fix kore dewa holo jeno grid er motoy thake */
 .btc-neon-card {
+    flex: 1 1 300px;
+    /* Minimum 300px hobe, ar jayga thakle boro hobe */
+    max-width: 380px;
+    /* Ekta card jeno khub beshi boro na hoye jay */
+    /* Nicher gulo aager motoy thakbe */
     position: relative;
     background: #000;
     border-radius: 16px;
@@ -2260,17 +2269,22 @@ a {
    SECTION 9B: CODING PROFILES (ULTRA GLOW & LIGHTING)
    ============================================================ */
 .profiles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
     margin-bottom: 50px;
 }
 
+/* Card er size control korar jonno */
 .profile-card {
+    flex: 1 1 280px;
+    /* Minimum 280px hobe */
+    max-width: 350px;
+    /* Maximum width set kore dewa holo jeno beshi boro na hoy */
     display: flex;
     align-items: center;
     gap: 20px;
-    /* Card er background ektu bright kora hoyeche */
     background: linear-gradient(145deg, rgba(25, 32, 40, 0.7), rgba(12, 15, 20, 0.95));
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
@@ -2280,7 +2294,6 @@ a {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    /* Default osthir ekta halka glow */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.02);
 }
 
@@ -2692,7 +2705,7 @@ a {
    ============================================================ */
 .bento-social-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto 80px auto;
@@ -2747,7 +2760,7 @@ a {
 }
 
 .bento-card.resume {
-    grid-column: span 3;
+    grid-column: span 2;
     --brand: #10b981;
     flex-direction: row;
     align-items: center;
@@ -3100,4 +3113,47 @@ body {
 .resume-btn:hover {
     background-color: rgba(0, 230, 118, 0.15) !important;
     transform: translateY(-2px) !important;
+}
+
+/* Styling for Live Website Button */
+.view-project-btn.live-btn {
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.view-project-btn.live-btn:hover {
+    background-color: #10b981;
+    color: #000;
+}
+
+.view-project-btn.live-btn:hover i {
+    color: #000;
+}
+
+/* Styling for Project Credentials */
+.project-credentials {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #f59e0b;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.project-credentials i {
+    color: #f59e0b;
+    margin-right: 5px;
+}
+
+.cred-highlight {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
 }
