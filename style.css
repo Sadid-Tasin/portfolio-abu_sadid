@@ -440,12 +440,7 @@ a {
     margin-bottom: 40px;
 }
 
-.max-w-desc {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* Video Container & Iframe Styling */
 .video-container {
     max-width: 800px;
     margin: 0 auto;
@@ -453,35 +448,16 @@ a {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-.video-placeholder {
-    width: 100%;
-    height: 420px;
+    aspect-ratio: 16 / 9;
+    /* Ensures standard video ratio */
     background: #0d0d0d;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-.video-placeholder:hover {
-    background: #121212;
-    color: #cf1767;
-}
-
-.play-icon {
-    font-size: 4rem;
-    margin-bottom: 15px;
-    color: #cf1767;
-    transition: transform 0.3s ease;
-}
-
-.video-placeholder:hover .play-icon {
-    transform: scale(1.1);
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
 }
 
 /* --- SECTION 3: WHO I AM --- */
@@ -507,7 +483,7 @@ a {
 }
 
 .highlight-text {
-    color: #cf1767;
+    color: #10b981;
     font-weight: 500;
 }
 
@@ -520,7 +496,7 @@ a {
 .academic-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 4px solid #cf1767;
+    border-left: 4px solid #10b981;
     border-radius: 8px;
     padding: 24px;
     transition: transform 0.3s ease, background 0.3s ease;
@@ -542,7 +518,7 @@ a {
 
 .academic-card .card-header i {
     font-size: 1.8rem;
-    color: #cf1767;
+    color: #10b981;
 }
 
 .academic-card .card-header h3 {
@@ -579,18 +555,18 @@ a {
 }
 
 .highlight-badge {
-    background: rgba(207, 23, 103, 0.15);
-    color: #cf1767 !important;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981 !important;
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
-    border: 1px solid rgba(207, 23, 103, 0.3);
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .career-spotlight {
     position: relative;
-    background: linear-gradient(135deg, rgba(207, 23, 103, 0.1) 0%, rgba(5, 5, 5, 0.4) 100%);
-    border: 1px solid rgba(207, 23, 103, 0.25);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 5, 5, 0.4) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.25);
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -599,7 +575,7 @@ a {
 
 .career-spotlight:hover {
     transform: translateY(-4px);
-    border-color: rgba(207, 23, 103, 0.5);
+    border-color: rgba(16, 185, 129, 0.5);
 }
 
 .spotlight-header {
@@ -610,7 +586,7 @@ a {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #cf1767;
+    color: #10b981;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -624,7 +600,7 @@ a {
 }
 
 .spotlight-text strong {
-    color: #cf1767;
+    color: #10b981;
     font-style: normal;
 }
 
@@ -648,14 +624,14 @@ a {
 
 .stat-box:hover {
     transform: translateY(-5px);
-    border-color: rgba(207, 23, 103, 0.4);
-    background: rgba(207, 23, 103, 0.04);
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 129, 0.04);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .stat-icon {
     font-size: 1.2rem;
-    color: #cf1767;
+    color: #10b981;
     margin-bottom: 10px;
     opacity: 0.8;
 }
@@ -677,12 +653,12 @@ a {
 }
 
 .highlight-stat {
-    border-color: rgba(207, 23, 103, 0.2);
-    background: linear-gradient(180deg, rgba(207, 23, 103, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-color: rgba(16, 185, 129, 0.2);
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .highlight-stat h2 {
-    color: #cf1767;
+    color: #10b981;
 }
 
 /* SECTION 4: WHAT I WORK WITH */
